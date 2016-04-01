@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>圆</title>
+<style>
+*{margin:0; padding:0;}
+#box{width:300px; height:300px; border:1px solid #000; border-radius:50%; position:absolute; left:50%; top:50%;margin-left:-150px;margin-top:-150px;}
+#box span{position:absolute; left:50%; top:0; width:50px; height:50px; background:red; border-radius:50%; margin-left:-25px; margin-top:-25px;}
+</style>
+<script>
+//弧度转角度
+function a2d(n){
+	return n*180/Math.PI;
+}
+//角度转弧度
+function d2a(n){
+	return n*Math.PI/180;
+}
+function rnd(n,m){
+	return parseInt(Math.random()*(m-n)+n);
+}
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var R = oBox.offsetWidth/2;
+	var N = 10;
+	for(var i=0;i<N;i++){				//创建元素
+		var oS = document.createElement('span');
+		oS.style.backgroundColor='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+		oBox.appendChild(oS);
+	}
+	var aS = oBox.children;
+	var bOk = true;				//设置bOk开关，区分弹出和收回
+	oBox.onclick=function(){
+		if(bOk){
+			for(var i=0;i<aS.length;i++){
+				startMove(aS[i],i*360/N);
+			}
+		}else{
+			for(var i=0;i<aS.length;i++){
+				startMove(aS[i],0);
+			}
+		}
+		
+		bOk = !bOk;
+	};
+	function startMove(obj,iTarget){
+		var start = obj.a||0;					//判断起点：有自定义起点就从自定义起点开始，没有从0开始
+		var dis = iTarget - start;
+		var n = 0;
+		var count = Math.floor(1000/30);
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			n++;
+			var a = 1-n/count;
+			var cur = start+dis*(1-Math.pow(a,3));		//当前所处的角度
+			obj.a = cur;				//设置自定义起点
+			var x = R+Math.sin(d2a(cur))*R;			//计算left值
+			var y = R-Math.cos(d2a(cur))*R;			//计算top值
+			
+			obj.style.left = x+'px';
+			obj.style.top = y+'px';
+			
+			if(n==count){
+				clearInterval(obj.timer);
+			}
+		},30);
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

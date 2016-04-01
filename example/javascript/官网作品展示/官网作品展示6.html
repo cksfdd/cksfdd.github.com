@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+#box{width:700px; height:358px; margin:100px auto; border:1px solid #000; position:relative; top:0; left:0; overflow:hidden;}
+#box ul{position:absolute; top:90px; left:0;}
+#box ul li{float:left;width:260px; height:179px; position:relative; top:0; left:0;}
+#box ul li img{width:260px; position:absolute; top:0; left:0;}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var oUl = oBox.children[0];
+	var aLi = oUl.children;
+	var aImg = oUl.getElementsByTagName('img');
+	oUl.style.width = aLi.length*aLi[0].offsetWidth+'px';
+	var divC = oBox.offsetWidth/2;
+	oUl.onmousedown=function(ev){
+		var oEvent = ev||event;
+		var disX = oEvent.clientX-oUl.offsetLeft;
+		document.onmousemove=function(ev){
+			var oEvent = ev||event;
+			var l = oEvent.clientX-disX;
+			if(l>divC-(0+0.5)*aLi[0].offsetWidth){			//限制左边拖拽范围（第一张图片在中间）
+				l = divC-(0+0.5)*aLi[0].offsetWidth;
+			}else if(l<divC-(aLi.length-1+0.5)*aLi[0].offsetWidth){			//限制右边拖拽范围（最后一张图片在中间）
+				/*divC-0.5*aLi[0].offsetWidth+(aLi.length*aLi[0].offsetWidth-oBox.offsetWidth)*/
+				l = divC-(aLi.length-1+0.5)*aLi[0].offsetWidth;
+			}
+			oUl.style.left = l+'px';
+
+			setSize();
+		};
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+			oUl.releaseCapture&&oUl.releaseCapture();
+		};
+		oUl.setCapture&&oUl.setCapture();
+		return false;
+	};
+	//先把某一张图片调到中间的位置
+	oUl.style.left = divC-(1+0.5)*aLi[0].offsetWidth+'px';
+	setSize();
+
+	function setSize(){
+		for(var i=0;i<aLi.length;i++){			//改变图片的样式
+			var dis = divC-(oUl.offsetLeft+aLi[i].offsetLeft+aLi[i].offsetWidth/2);			//获取每张图片的中心到box的中心距离
+			var scale = 1-Math.abs(dis)/500;			//计算比例
+			(scale<0.5)&&(scale=0.5);			//限制比例范围
+			aImg[i].style.width = scale*520+'px';			//改宽
+			aImg[i].style.height = scale*358+'px';				//改高
+			aImg[i].style.marginLeft = -(aImg[i].offsetWidth-260)/2+'px';			//改marginLeft
+			aImg[i].style.marginTop = -(aImg[i].offsetHeight-179)/2+'px';			//改marginTop
+			aImg[i].style.zIndex = scale*100000;			//改层级
+		}
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<ul>
+		<li><img src="img2/1.jpg" /></li>
+		<li><img src="img2/2.jpg" /></li>
+		<li><img src="img2/3.jpg" /></li>
+		<li><img src="img2/4.jpg" /></li>
+		<li><img src="img2/5.jpg" /></li>
+		<li><img src="img2/6.jpg" /></li>
+		<li><img src="img2/7.jpg" /></li>
+		<li><img src="img2/8.jpg" /></li>
+	</ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

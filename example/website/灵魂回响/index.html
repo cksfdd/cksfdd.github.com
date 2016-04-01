@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>灵魂回响</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script>
+		window.onload=function(){
+			var oMainLeft=document.getElementById('main_left');
+			var aLi1=oMainLeft.getElementsByTagName('li');
+			var aSpan1=oMainLeft.getElementsByTagName('span');
+			for(var i=0;i<aSpan1.length;i++){
+				aSpan1[i].index=i;
+				aSpan1[i].onclick=function(){
+					for(var i=0;i<aSpan1.length;i++){
+						aSpan1[i].className='';
+						aLi1[i].className='';
+					}
+					aLi1[this.index].className='active';
+					this.className='on';
+				}
+			}
+	//	mainleft选项卡
+			var oMainRight=document.getElementById('main_right');
+			var aLi2=oMainRight.getElementsByTagName('li');
+			var aDd2=oMainRight.getElementsByTagName('dl');
+				for(var i=0; i<aLi2.length;i++){
+					aLi2[i].index=i;
+					aLi2[i].onmouseover=function(){
+						for(var i=0;i<aLi2.length;i++){
+							aLi2[i].className='';
+							aDd2[i].className='';
+						}
+						this.className='on';
+						aDd2[this.index].className='active';
+					}
+				}
+//			mainright
+		}
+	</script>
+</head>
+<body>
+	<div class="head clearfix">
+		<div class="head_l fl"></div>
+		<div class="head_r fr clearfix">
+			<ul class="fr clearfix">
+				<li><a href="#">畅游全游戏</a></li>
+				<li><a href="#">畅游全服务</a></li>
+				<li class="head_r_l"><a href="#">客服</a></li>
+			</ul>
+			<div class="fr">
+				<span><a href="#">畅游+</a></span>
+				<span><a href="#">充值</a></span>
+				<span><a href="#">注册</a></span>
+			</div>
+		</div>
+	</div>
+	<!-- 头部 -->
+	<div class="border_t"></div>
+	<!-- 边框 -->
+	<div class="nav clearfix">
+		<div class="logo fl">
+			<a href="#">灵魂回响</a>				
+		</div>
+		<ul class="fr clearfix">
+			<li>
+				<p><a href="#">首页</a></p>
+				<a href="#">HOME</a> 
+			</li>
+			<li>
+				<p><a href="#">新闻公告</a></p>
+				<a href="#">NEWS</a> 
+			</li>
+			<li>
+				<p><a href="#">游戏特色</a></p>
+				<a href="#">FEATURES</a> 
+			</li>
+			<li>
+				<p><a href="#">新手指南</a></p>
+				<a href="#">NEWBIE</a> 
+			</li>
+			<li>
+				<p><a href="#">游戏下载</a></p>
+				<a href="#">DOWNLOAD</a> 
+			</li>
+			<li>
+				<p><a href="#">活动专区</a></p>
+				<a href="#">ACTIVTY</a> 
+			</li>
+			<li class="video">
+				<p><a href="#">视觉欣赏</a></p>
+				<a href="#">VIDEO&PICTURE</a> 
+			</li>
+			<li>
+				<p><a href="#">玩家互动</a></p>
+				<a href="#">INTERACTION</a> 
+			</li>
+			<li>
+				<p><a href="#">客户服务</a></p>
+				<a href="#">SERVICE</a> 
+			</li>
+		</ul>
+		<a class="love" href="#">
+			<img src="images/png10.png">
+		</a>
+	</div>
+	<!-- 导航 -->
+	<div class="download clearfix">
+		<dl class="fl clearfix">
+			<dt>
+				<a href="#">
+					<p>游戏下载</p>
+					<span>DOWNLOAD</span>
+				</a>
+			</dt>
+			<dd>
+				<a href="#">账号注册</a>
+			</dd>
+			<dd>
+				<a href="#">账号充值</a>
+			</dd>
+			<dd>
+				<a href="#">兑换中心</a>
+			</dd>
+			<dd>
+				<a href="#">新手指南</a>
+			</dd>
+		</dl>
+		<div class="download_r fl">
+			<ul class="download_r_t">
+				<li><a href="#">电信一区</a><a class="download_color" href="#">【元素殿堂】</a><a href="#">欢迎进驻!</a></li>
+				<li><a href="#">电信一区</a><a class="download_color" href="#">【元素殿堂】</a><a href="#">欢迎进驻!</a></li>		
+			</ul>
+			<div class="download_r_b clearfix">
+				<p class="fl">
+					距离您上次访问有<span>200</span>条更新
+				</p>
+				<ul class="fl clearfix">
+					<li><a href="#">关注:</a></li>
+					<li class="download_bg1"><a href="#"></a></li>
+					<li class="download_bg2"><a href="#"></a></li>
+					<li class="download_bg2"><a href="#"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 下载 -->
+	<div class="main clearfix">
+		<div class="main_left" id="main_left">
+			<ul>
+				<li class="active"><a href="#"><img src="images/main1.jpg"></a></li>
+				<li><a href="#"><img src="images/1.jpg"></a></li>
+				<li><a href="#"><img src="images/header_main.jpg"></a></li>
+				<li><a href="#"><img src="images/main1.jpg"></a></li>
+				<li><a href="#"><img src="images/main1.jpg"></a></li>
+			</ul>
+			<div class="btn clearfix">
+				<span class="on"></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<a class="slider_1" href="#"><img src="images/main2.png"></a>
+			<a class="slider_2" href="#"><img src="images/main3.png"></a>
+		</div>
+		<div class="main_right" id="main_right">
+			<ul class="main_r_t clearfix">
+				<li><a href="#">综合</a></li>
+				<li><a href="#">新闻</a></li>
+				<li class="on"><a href="#">公告</a></li>
+				<li><a href="#">媒体</a></li>
+			</ul>
+			<dl class="active">
+				<dt>
+					<input type="text" placeholder="111111111111111">
+				</dt>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#"></a>
+					<span class="fr">更多信息>></span>
+				</dd>
+			</dl>
+			<dl>
+				<dt>
+					<input type="text" placeholder="222222222222222">
+				</dt>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#"></a>
+					<span class="fr">更多信息>></span>
+				</dd>
+			</dl>
+			<dl>
+				<dt>
+					<input type="text" placeholder="3333333333333333333">
+				</dt>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#"></a>
+					<span class="fr">更多信息>></span>
+				</dd>
+			</dl>
+			<dl>
+				<dt>
+					<input type="text" placeholder="44444444444444444444">
+				</dt>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#">【新闻】决战开启！6月4日全新Rain本“暗黑</a>
+					<span class="fr">02/24</span>
+				</dd>
+				<dd class="clearfix">
+					<a class="fl" href="#"></a>
+					<span class="fr">更多信息>></span>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<!-- main -->
+	<ul class="activity clearfix">
+		<li><a href=""><img src="images/main11.png"></a></li>
+		<li><a href=""><img src="images/main12.png"></a></li>
+		<li><a href=""><img src="images/main13.png"></a></li>
+		<li class="last"><a href=""><img src="images/main14.png"></a></li>
+	</ul>
+	<!-- activity-->
+	<div class="role clearfix">
+		<div class="role_left fl">
+			<ul>
+				<li><a href="#">神射手</a></li>
+				<li class="active"><a href="#">守护者</a></li>
+				<li><a href="#">魔法师</a></li>
+				<li><a href="#">战&nbsp;士</a></li>
+				<li><a href="#">刺&nbsp;客</a></li>
+			</ul>
+			<div>
+				<p class="on"><a href="#"><img src="images/role1.png"></a></p>
+				<p><a href="#"><img src="images/role1.png"></a></p>
+				<p><a href="#"><img src="images/role1.png"></a></p>
+				<p><a href="#"><img src="images/role1.png"></a></p>
+				<p><a href="#"><img src="images/role1.png"></a></p>
+			</div>
+		</div>
+		<div class="role_right fr">
+			<h3>活动中心</h3>	
+			<div class="role_r_bg">
+				<img src="images/role5.jpg">
+				<div>
+					<p></p>
+					<a href="#">女武神的秘宝女武神的秘宝女武神的秘宝女武神的秘宝女武神的秘宝女武神的秘宝</a>
+				</div>
+			</div>
+			<ul>
+				<li class="clearfix">
+					<a class="fl" href="#">神喻者的成长礼</a>
+					<span class="fr">进行中</span>
+				</li>
+				<li class="clearfix">
+					<a class="fl" href="#">神喻者的成长礼</a>
+					<span class="fr">进行中</span>
+				</li>
+				<li class="clearfix">
+					<a class="fl" href="#">神喻者的成长礼</a>
+					<span class="fr">进行中</span>
+				</li>
+				<li class="clearfix">
+					<a class="fl" href="#">神喻者的成长礼</a>
+					<span class="fr">进行中</span>
+				</li>
+				<li class="clearfix">
+					<a class="fl" href="#">神喻者的成长礼</a>
+					<span class="fr">进行中</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- role -->
+	<div class="content clearfix">
+		<div class="content_l fl">
+			<dl>
+				<dt>快捷入口</dt>
+				<dd class="clearfix">
+					<div class="fl"><a href="#">&middot;账号管理</a></div>
+					<div class="fl"><a href="#">&middot;账号管理</a></div>
+				</dd>
+				<dd class="clearfix">
+					<div class="fl"><a href="#">&middot;账号管理</a></div>
+					<div class="fl"><a href="#">&middot;账号管理</a></div>
+				</dd>
+				<dd class="clearfix">
+					<div class="fl"><a href="#">&middot;账号管理</a></div>
+					<div class="fl"><a href="#">&middot;账号管理</a></div>
+				</dd>
+				<dd class="clearfix">
+					<div class="fl"><a href="#">&middot;账号管理</a></div>
+					<div class="fl"><a href="#">&middot;账号管理</a></div>
+				</dd>
+			</dl>
+			<a href="#"><img src="images/content2.jpg"></a>
+			<p><a href="#">媒体合作专区</a></p>
+			<a class="pic" href="#"><img src="images/content4.jpg"></a>
+		</div>
+		<div class="content_c fl">
+			<div class="player">
+			 	<h3>玩家交流</h3>
+			 	<div class="player_t clearfix">
+			 		<span class="active"><a href="#">玩家攻略</a></span>
+			 		<span><a href="#">论坛热帖</a></span>
+			 		<span><a href="#">社区精华</a></span>
+			 		<span><a href="#">更多信息</a></span>
+			 	</div>
+			 	<ul>
+			 		<li class="clearfix show">
+			 			<a class="pic fl" href="#"><img src="images/player2.png"></a>
+			 			<div class="fl">
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 			</div>
+			 		</li>
+			 		<li class="clearfix">
+			 			<a class="fl" href="#"><img src="images/player2.png"></a>
+			 			<div class="fl">
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 			</div>
+			 		</li>
+			 	</ul>
+			</div>
+			<div class="player">
+			 	<h3>媒体专区</h3>
+			 	<div class="clearfix">
+			 		<span class="active"><a href="#">17173</a></span>
+			 		<span><a href="#">新浪爱问</a></span>
+			 		<span><a href="#">太平洋游戏</a></span>
+			 		<span><a href="#">更多信息</a></span>
+			 	</div>
+			 	<ul>
+			 		<li class="clearfix show">
+			 			<a class="pic fl" href="#"><img src="images/player2.png"></a>
+			 			<div class="fl">
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 			</div>
+			 		</li>
+			 		<li class="clearfix">
+			 			<a class="fl" href="#"><img src="images/player2.png"></a>
+			 			<div class="fl">
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 				<p><a href="#">&middot;生活技能之烹饪技能详细解读</a></p>
+			 			</div>
+			 		</li>
+			 	</ul>
+			</div>
+		</div>
+		<div class="content_r fr">
+			<div class="content_r_t">
+				<h3>游戏资料</h3>
+				<ul>
+					<li class="clearfix">
+						<span class="span1">新手入门</span><a href="#">注册账号</a><span>&nbsp;|&nbsp;</span><a href="#">下载游戏</a><span>&nbsp;|&nbsp;</span><a href="#">登录游戏</a>
+					</li>
+					<li class="clearfix">
+						<span class="span1">新手入门</span><a href="#">注册账号</a><span>&nbsp;|&nbsp;</span><a href="#">下载游戏</a><span>&nbsp;|&nbsp;</span><a href="#">登录游戏</a>
+					</li>
+					<li class="clearfix">
+						<span class="span1">新手入门</span><a href="#">注册账号</a><span>&nbsp;|&nbsp;</span><a href="#">下载游戏</a><span>&nbsp;|&nbsp;</span><a href="#">登录游戏</a>
+					</li>
+					<li class="last clearfix">
+						<span class="span1">新手入门</span><a href="#">注册账号</a><span>&nbsp;|&nbsp;</span><a href="#">下载游戏</a><span>&nbsp;|&nbsp;</span><a href="#">登录游戏</a>
+					</li>
+					<li class="go">
+						<a href="#">进入资料站</a>
+					</li>
+				</ul>
+			</div>
+			<div class="content_r_b">
+				<h3>视觉欣赏</h3>
+				<div class="clearfix">
+					<span class="active">游戏视频</span>
+					<span>游戏截图</span>
+					<span>更多信息</span>
+				</div>
+				<ul>
+					<li>
+						<a href="#"><img src="images/video1.jpg"></a>
+						<a href="#"><img src="images/video1.jpg"></a>
+						<a href="#"><img src="images/video1.jpg"></a>
+						<a href="#"><img src="images/video1.jpg"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- content -->
+	<div class="footer">
+		<div class="footer_top">
+			<p>抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活</p>
+			<p>本游戏适合18周岁以上的成年人用户，未满18周岁的未成年用户请在家长的监督下进行游戏。</p>
+		</div>
+		<div class="footer_bottom">
+			<p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
+			<p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>css3小时钟</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .clock {
+            width: 300px;
+            height: 300px;
+            border: 5px solid #000;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -150px;
+            background:url("clock.jpg") no-repeat;
+            background-size:cover;
+        }
+
+        .clock div {
+            position: absolute;
+            left: 50%;
+            border-radius: 100% 100% 0 0;
+            -webkit-transform-origin: center bottom;
+        }
+
+        .clock .hou {
+            width: 8px;
+            height: 80px;
+            background: purple;
+            margin-left: -4px;
+            top: 70px;
+        }
+
+        .clock .min {
+            width: 6px;
+            height: 100px;
+            background: blue;
+            margin-left: -3px;
+            top: 50px;
+        }
+
+        .clock .sec {
+            width: 4px;
+            height: 120px;
+            background: yellow;
+            margin-left: -2px;
+            top: 30px;
+        }
+
+        .clock .scale {
+            position: absolute;
+            left: 50%;
+            margin-left: -2px;
+            top: 0;
+            width: 4px;
+            height: 10px;
+            background: #fff;
+            -webkit-transform-origin: center 150px;
+        }
+
+        .clock .big_scale {
+            position: absolute;
+            left: 50%;
+            margin-left: -3px;
+            top: 0;
+            width: 6px;
+            height: 16px;
+            background: #fff;
+            -webkit-transform-origin: center 150px;
+        }
+
+        .clock .big_scale em {
+            position: absolute;
+            top: 18px;
+            font-style: normal;
+            font-weight: bold;
+            width: 30px;
+            left: 50%;
+            margin-left: -15px;
+            text-align: center;
+            color:#fff;
+        }
+
+        .clock .cap {
+            width: 16px;
+            height: 16px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -8px;
+            margin-top: -8px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var oClock = document.querySelector('.clock');
+            var oHou = document.querySelector('.hou');
+            var oMin = document.querySelector('.min');
+            var oSec = document.querySelector('.sec');
+            //设置刻度
+            var N = 60;
+            for (var i = 0; i < N; i++) {
+                var oSpan = document.createElement('span');
+                //小刻度
+                if (i % 5) {
+                    oSpan.className = 'scale';
+                    //大刻度
+                } else {
+                    oSpan.className = 'big_scale';
+                    //创建数字
+                    var oEm = document.createElement('em');
+                    //处理12点数字
+                    oEm.innerHTML = i / 5 || 12;
+                    oSpan.appendChild(oEm);
+                    //改变数字的方向（根据自身旋转）
+                    oEm.style.WebkitTransform = 'rotate(' + -i * 6 + 'deg)';
+                }
+                //设置刻度的位置（根据圆心旋转）
+                oSpan.style.WebkitTransform = 'rotate(' + i * 6 + 'deg)';
+                oClock.appendChild(oSpan);
+            }
+
+            function clock() {
+                var oDate = new Date();
+                var h = oDate.getHours();
+                var m = oDate.getMinutes();
+                var s = oDate.getSeconds();
+                var ms = oDate.getMilliseconds();
+                //设置指针的转动（整点和半点）
+                oHou.style.WebkitTransform = 'rotate(' + (h * 30 + m / 60 * 30) + 'deg)';
+                oMin.style.WebkitTransform = 'rotate(' + (m * 6 + s / 60 * 6) + 'deg)';
+                oSec.style.WebkitTransform = 'rotate(' + (s * 6 + ms / 1000 * 6) + 'deg)';
+            }
+
+            clock();
+            //连续走，刷新的时间间隔就要小一点
+            setInterval(clock, 1);
+        }, false);
+    </script>
+</head>
+
+<body>
+<div class="clock">
+    <div class="hou"></div>
+    <div class="min"></div>
+    <div class="sec"></div>
+    <!--设置圆心点-->
+    <i class="cap"></i>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

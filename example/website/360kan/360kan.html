@@ -1,0 +1,4036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>360kan</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/cxdjq.js"></script>
+    <script>
+        window.onload=function(){
+            function show(obj,name){
+                for(var i=0;i<obj.length;i++){
+                    obj[i].onmouseover=function(){
+                        this.className=name;
+                    };
+                    obj[i].onmouseout=function(){
+                        this.className='';
+                    };
+                }
+            }
+            function show1(obj){
+                for(var i=0;i<obj.length;i++){
+                    obj[i].onmouseover=function(){
+                        this.style.color = '#46c832';
+                    };
+                    obj[i].onmouseout=function(){
+                        this.style.color = '#444444';
+                    };
+                }
+            }
+            function tab(obj1,obj2,name1,name2){
+                for(var i=0;i<obj1.length;i++){
+                    obj1[i].index=i;
+                    obj1[i].onmouseover=function(){
+                        for(var i=0;i<obj1.length;i++){
+                            obj1[i].className='';
+                            obj2[i].className='';
+                        }
+                        this.className=name1;
+                        obj2[this.index].className=name2;
+                    }
+                }
+            }
+
+            (function(){
+                var oDiv=document.getElementById('top');
+                var oSpan=oDiv.getElementsByTagName('span')[0];
+                oSpan.onclick=function(){
+                  if(oDiv.style.display=='none'){
+                      oDiv.style.display='block'
+                  }else{
+                      oDiv.style.display='none'
+                  }
+                };
+            })();
+            /*top*/
+            (function(){
+                var oUl=document.getElementById('header_ul');
+                var aLi=oUl.getElementsByTagName('li');
+                var timer=null;
+                for(var i=0;i<aLi.length;i++){
+                    aLi[i].onmouseover=function(){
+                        var oDiv=this.getElementsByTagName('div')[0];
+                        var oSpan=this.getElementsByTagName('span')[0];
+                        oSpan.className='iconfont active';
+                        if(oDiv){
+                            clearInterval(timer);
+                            timer=setInterval(function(){
+                                oDiv.style.display='block';
+                            },200);
+                        }
+                    };
+                    aLi[i].onmouseout=function(){
+                        var oDiv=this.getElementsByTagName('div')[0];
+                        var oSpan=this.getElementsByTagName('span')[0];
+                        oSpan.className='iconfont';
+                        if(oDiv){
+                            clearInterval(timer);
+                            timer=setInterval(function(){
+                                oDiv.style.display='none';
+                            },200);
+                        }
+                    };
+                }
+            })();
+            /*header*/
+            (function(){
+                var oUl=document.getElementById('nav_ul');
+                var aLi=oUl.getElementsByTagName('li');
+                for(var i=1;i<aLi.length;i++){
+                    aLi[i].onmouseover=function(){
+                        var oP=this.getElementsByTagName('p')[0];
+                        if(oP){
+                            oP.className='on';
+                        }
+                        this.className='nav_color';
+                    };
+                    aLi[i].onmouseout=function(){
+                        var oP=this.getElementsByTagName('p')[0];
+                        if(oP){
+                            oP.className='';
+                        }
+                        this.className='';
+                    };
+                }
+            })();
+            (function(){
+                var oUl=document.getElementById('nav_ul');
+                var aSpan=oUl.getElementsByTagName('span');
+                for(var i=0;i<aSpan.length;i++){
+                    aSpan[i].onmouseover=function(){
+                        this.style.backgroundColor='green';
+                    };
+                    aSpan[i].onmouseout=function(){
+                        this.style.backgroundColor='#fff';
+                    };
+                }
+            })();
+            (function(){
+                var oDl=document.getElementById('nav_dl');
+                var aDd=oDl.getElementsByTagName('dd');
+                for(var i=0;i<aDd.length;i++){
+                    aDd[i].onmouseover=function(){
+                        this.className='on';
+                    };
+                    aDd[i].onmouseout=function(){
+                        this.className='';
+                    };
+                }
+            })();
+            /*nav*/
+            (function(){
+                var oUl=document.getElementById('banner_ul');
+                var aLi=oUl.getElementsByTagName('li');
+                for(var i=0;i<aLi.length;i++){
+                    aLi[i].onmouseover=function(){
+                        var oA=this.getElementsByTagName('a')[0];
+                        oA.style.display='block';
+                    };
+                    aLi[i].onmouseout=function(){
+                        var oA=this.getElementsByTagName('a')[0];
+                        oA.style.display='none';
+                    };
+                }
+            })();
+            /*banner*/
+            (function(){
+                var oDl=document.getElementById('hot_l');
+                var aDiv=oDl.getElementsByTagName('div');
+                show(aDiv,'on');
+            })();
+            (function(){
+                var oDl=document.getElementById('hot_l');
+                var aEle = getByClass(oDl,'hot_dd_f');
+                show1(aEle);
+            })();
+            (function(){
+                var oDl=document.getElementById('hot_l');
+                var aEle = getByClass(oDl,'hot_dd_first_f');
+                show1(aEle);
+            })();
+            /*hot_l*/
+            (function(){
+                var oDiv=document.getElementById('hot_r');
+                var oDiv1=document.getElementById('hot_r_c_div');
+                var aSpan=oDiv1.getElementsByTagName('span');
+                var aDl=oDiv.getElementsByTagName('dl');
+                var aDd=oDiv.getElementsByTagName('dd');
+                for(var i=0;i<aDd.length;i++){
+                    if(i%2==1&&i<9){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==0&&i>=9&&i<18){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==1&&i>=18&&i<27){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==0&&i>=28&&i<36){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==1&&i>=36&&i<45){
+                        aDd[i].style.background='#ccc';
+                    }
+                }
+                for(var i=0;i<aSpan.length;i++){
+                    aSpan[i].index=i;
+                    aSpan[i].onmouseover=function(){
+                        for(var i=0;i<aDl.length;i++){
+                            aSpan[i].className='';
+                            aDl[i].style.display='none';
+                        }
+                        this.className='on';
+                        aDl[this.index].style.display='block';
+                    };
+                }
+            })();
+            /*hot_r*/
+            (function(){
+                var oDiv=document.getElementById('teleplay_l_t');
+                var aLi=oDiv.getElementsByTagName('li');
+                for(var i=0;i<aLi.length;i++){
+                    aLi[i].onmouseover=function(){
+                        this.className='on';
+                    };
+                    aLi[i].onmouseout=function(){
+                        this.className='';
+                    };
+                }
+            })();
+            (function(){
+                var oUl=document.getElementById('teleplay_l_b');
+                var aLi=oUl.getElementsByTagName('li');
+                var aEle = getByClass(oUl,'teleplay_show');
+                for(var i = 0;i<aEle.length;i++){
+                    aLi[i].index=i;
+                    aLi[i].onmouseover=function(){
+                        aEle[this.index].style.display = 'block';
+                    };
+                    aLi[i].onmouseout=function(){
+                        aEle[this.index].style.display = 'none';
+                    };
+                }
+            })();
+            (function(){
+                var oDiv=document.getElementById('teleplay_r');
+                var oDiv1=document.getElementById('teleplay_div');
+                var aSpan=oDiv1.getElementsByTagName('span');
+                var aDl=oDiv.getElementsByTagName('dl');
+                var aDd=oDiv.getElementsByTagName('dd');
+                for(var i=0;i<aDd.length;i++){
+                    if(i%2==1&&i<9){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==0&&i>=9&&i<18){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==1&&i>=18&&i<27){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==0&&i>=28&&i<36){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==1&&i>=36&&i<45){
+                        aDd[i].style.background='#ccc';
+                    }
+                }
+                for(var i=0;i<aSpan.length;i++){
+                    aSpan[i].index=i;
+                    aSpan[i].onmouseover=function(){
+                        for(var i=0;i<aDl.length;i++){
+                            aSpan[i].className='';
+                            aDl[i].style.display='none';
+                        }
+                        this.className='on';
+                        aDl[this.index].style.display='block';
+                    };
+                }
+            })();
+            (function(){
+                var oDiv=document.getElementById('teleplay_r_b');
+                var aDd=oDiv.getElementsByTagName('dd');
+                show(aDd,'on');
+            })();
+            /*teleplay*/
+            (function(){
+                var oDl=document.getElementById('comment_l');
+                var aDiv=oDl.getElementsByTagName('div');
+                show(aDiv,'on');
+            })();
+            (function(){
+                var oDl=document.getElementById('comment_r');
+                var oA=oDl.getElementsByTagName('a');
+                show1(oA);
+            })();
+            (function(){
+                var oDl=document.getElementById('comment_l');
+                var aEle = getByClass(oDl,'hot_dd_f');
+                show1(aEle);
+            })();
+            (function(){
+                var oDiv=document.getElementById('comment_r_b');
+                var aEle=getByClass(oDiv,'comment_r_b_a');
+                var aDl=oDiv.getElementsByTagName('dl');
+                for(var i=0;i<aEle.length;i++){
+                    aEle[i].index=i;
+                    aEle[i].onmouseover=function(){
+                        for(var i=0;i<aEle.length;i++){
+                            aEle[i].className='comment_r_b_a';
+                            aDl[i].className='';
+                        }
+                        this.className='comment_r_b_a on';
+                        aDl[this.index].className='active';
+                    }
+                }
+            })();
+            /*comment*/
+            (function(){
+                var oDiv=document.getElementById('moive_l_t');
+                var aLi=oDiv.getElementsByTagName('li');
+                for(var i=0;i<aLi.length;i++){
+                    aLi[i].onmouseover=function(){
+                        this.className='on';
+                    };
+                    aLi[i].onmouseout=function(){
+                        this.className='';
+                    };
+                }
+            })();
+            (function(){
+                var oUl=document.getElementById('moive_l_b');
+                var aLi=oUl.getElementsByTagName('li');
+                var aEle = getByClass(oUl,'teleplay_show');
+                for(var i = 0;i<aEle.length;i++){
+                    aLi[i].index=i;
+                    aLi[i].onmouseover=function(){
+                        aEle[this.index].style.display = 'block';
+                    };
+                    aLi[i].onmouseout=function(){
+                        aEle[this.index].style.display = 'none';
+                    };
+                }
+            })();
+            (function(){
+                var oDiv=document.getElementById('moive_r');
+                var oDiv1=document.getElementById('moive_div');
+                var aSpan=oDiv1.getElementsByTagName('span');
+                var aDl=oDiv.getElementsByTagName('dl');
+                var aDd=oDiv.getElementsByTagName('dd');
+                for(var i=0;i<aDd.length;i++){
+                    if(i%2==1&&i<9){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==0&&i>=9&&i<18){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==1&&i>=18&&i<27){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==0&&i>=28&&i<36){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==1&&i>=36&&i<45){
+                        aDd[i].style.background='#ccc';
+                    }
+                }
+                for(var i=0;i<aSpan.length;i++){
+                    aSpan[i].index=i;
+                    aSpan[i].onmouseover=function(){
+                        for(var i=0;i<aDl.length;i++){
+                            aSpan[i].className='';
+                            aDl[i].style.display='none';
+                        }
+                        this.className='on';
+                        aDl[this.index].style.display='block';
+                    };
+                }
+            })();
+            (function(){
+                var oDiv=document.getElementById('moive_r_b');
+                var aDd=oDiv.getElementsByTagName('dd');
+                show(aDd,'on');
+            })();
+            /*movie*/
+            (function(){
+                var oDl=document.getElementById('film_l');
+                var aDiv=oDl.getElementsByTagName('div');
+                show(aDiv,'on');
+            })();
+            (function(){
+                var oDl=document.getElementById('film_l');
+                var aEle = getByClass(oDl,'hot_dd_f');
+                show1(aEle);
+            })();
+            (function(){
+                var oDiv=document.getElementById('film_r');
+                var aDd=oDiv.getElementsByTagName('dd');
+                show(aDd,'on');
+            })();
+            /*film*/
+            (function(){
+                var oDiv=document.getElementById('show_l_t');
+                var aLi=oDiv.getElementsByTagName('li');
+                show(aLi,'on');
+            })();
+            (function(){
+                var oDl=document.getElementById('show_l');
+                var aDiv=oDl.getElementsByTagName('div');
+                show(aDiv,'on');
+            })();
+            (function(){
+                var oDl=document.getElementById('show_l');
+                var aEle = getByClass(oDl,'show_dd_f');
+                show1(aEle);
+            })();
+            (function(){
+                var oDl=document.getElementById('show_l');
+                var aEle = getByClass(oDl,'show_dd_first_f');
+                show1(aEle);
+            })();
+            (function(){
+                var oDl=document.getElementById('show_r');
+                var aA=oDl.getElementsByTagName('a');
+                show1(aA);
+            })();
+            /*show*/
+            (function(){
+                var oDl=document.getElementById('fun_l');
+                var aDiv=oDl.getElementsByTagName('div');
+                show(aDiv,'on');
+            })();
+            (function(){
+                var oDl=document.getElementById('fun_l');
+                var oA=oDl.getElementsByTagName('a');
+                show1(oA);
+            })();
+            /*fun*/
+            (function(){
+                var oDiv=document.getElementById('anime_l_t');
+                var aLi=oDiv.getElementsByTagName('li');
+                show(aLi,'on');
+            })();
+            (function(){
+                var oDl=document.getElementById('anime_l');
+                var aDiv=oDl.getElementsByTagName('div');
+                show(aDiv,'on');
+            })();
+            (function(){
+                var oDl=document.getElementById('anime_l');
+                var aEle = getByClass(oDl,'show_dd_f');
+                show1(aEle);
+            })();
+            (function(){
+                var oDl=document.getElementById('anime_l');
+                var aEle = getByClass(oDl,'show_dd_first_f');
+                show1(aEle);
+            })();
+            (function(){
+                var oDiv=document.getElementById('anime_r');
+                var oDiv1=document.getElementById('anime_div');
+                var aSpan=oDiv1.getElementsByTagName('span');
+                var aDl=oDiv.getElementsByTagName('dl');
+                var aDd=oDiv.getElementsByTagName('dd');
+                for(var i=0;i<aDd.length;i++){
+                    if(i%2==0&&i<10){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==0&&i>=10&&i<20){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==0&&i>=20&&i<30){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==0&&i>=30&&i<40){
+                        aDd[i].style.background='#ccc';
+                    }else if(i%2==0&&i>=40&&i<50){
+                        aDd[i].style.background='#ccc';
+                    }
+                }
+                for(var i=0;i<aSpan.length;i++){
+                    aSpan[i].index=i;
+                    aSpan[i].onmouseover=function(){
+                        for(var i=0;i<aDl.length;i++){
+                            aSpan[i].className='';
+                            aDl[i].style.display='none';
+                        }
+                        this.className='on';
+                        aDl[this.index].style.display='block';
+                    };
+                }
+            })();
+            /*anime*/
+            (function(){
+                var oDl1=document.getElementById('update_l');
+                var oDiv=document.getElementById('update_l_b');
+                var aDd1=oDl1.getElementsByTagName('dd');
+                var aA=oDl1.getElementsByTagName('a');
+                var aDl=oDiv.getElementsByTagName('dl');
+                for(var i=0;i<aDd1.length;i++){
+                    aDd1[i].index=i;
+                    aDd1[i].onmouseover=function(){
+                        for(var i=0;i<aDd1.length;i++){
+                            aDd1[i].className='';
+                            aA[i].className='';
+                            aDl[i].className='hot_l clearfix';
+                        }
+                        this.className='on';
+                        aA[this.index].className='active';
+                        aDl[this.index].className='show hot_l clearfix';
+                    }
+                }
+            })();
+            /*update*/
+            (function(){
+                var oDl=document.getElementById('bottom_l');
+                var aDiv=oDl.getElementsByTagName('div');
+                show(aDiv,'on');
+            })();
+            (function(){
+                var oDl=document.getElementById('bottom_l');
+                var aEle = getByClass(oDl,'bottom_dd_f');
+                show1(aEle);
+            })();
+            /*bottom*/
+        };
+    </script>
+</head>
+<body>
+<div class="top" id="top">
+    <a href="javascript:;">
+        <span>x</span>
+        <img src="images/top.jpg" alt="">
+    </a>
+</div>     <!--top-->
+<div class="header">
+    <div class="header_m clearfix">
+        <a href="javascript:;" class="h_logo1">
+            <img src="images/header1.jpg" alt="">
+        </a>
+        <a href="javascript:;" class="h_logo2">
+            <img src="images/header2.png" alt="">
+        </a>
+        <div class="search">
+            <input type="text" value="" placeholder="秦时明月">
+            <a class="iconfont" href="javascript:;">&#xe605;</a>
+        </div>
+        <ul class="clearfix" id="header_ul">
+            <li>
+                <a href="javascript:;">
+                    <span class="iconfont">&#xe600;</span>
+                    <i>我的影视</i>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="iconfont">&#xe654;</span>
+                    <i>我的影视</i>
+                </a>
+                <div></div>
+            </li>
+            <li class="li_last">
+                <a class="clearfix" href="javascript:;">
+                    <span></span>
+                    <i>APP影视</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>           <!--header-->
+<div class="nav">
+    <div>
+        <ul id="nav_ul">
+            <li class="nav_color"><a href="javascript:;">首页</a></li>
+            <li>
+                <a href="javascript:;">电视剧</a>
+                <p>
+                    <span>111111111</span>
+                    <span>22222</span>
+                    <span>33333</span>
+                    <span>44444</span>
+                    <span>55555</span>
+                    <span>66666</span>
+                    <span>77777</span>
+                </p>
+            </li>
+            <li>
+                <a href="javascript:;">电影</a>
+                <p>
+                    <span>111111111</span>
+                    <span>22222</span>
+                    <span>33333</span>
+                    <span>44444</span>
+                    <span>55555</span>
+                    <span>66666</span>
+                    <span>77777</span>
+                </p>
+            </li>
+            <li><a href="javascript:;">综艺</a></li>
+            <li><a href="javascript:;">动漫</a></li>
+            <li><a href="javascript:;">娱乐</a></li>
+            <li><a href="javascript:;">资讯</a></li>
+            <li><a href="javascript:;">直播</a></li>
+            <li><a href="javascript:;">广场舞</a></li>
+        </ul>
+        <dl id="nav_dl">
+            <dd><a href="javascript:;">秀场</a></dd>
+            <dd><a href="javascript:;">体育</a></dd>
+            <dd><a href="javascript:;">搞笑</a></dd>
+            <dd><a href="javascript:;">游戏</a></dd>
+            <dd><a href="javascript:;">专题</a></dd>
+        </dl>
+    </div>
+</div>              <!--nav-->
+<div class="banner">
+    <div class="banner_m">
+        <span></span>
+        <i></i>
+        <ul class="clearfix" id="banner_ul">
+            <li>
+                <img src="images/banner1.jpg" alt="">
+                <a href="javascript:;">
+                    <img src="images/play.png" alt="">
+                </a>
+            </li>
+            <li class="banner_middle">
+                <img src="images/banner2.jpg" alt="">
+                <a href="javascript:;">
+                    <img src="images/play.png" alt="">
+                </a>
+            </li>
+            <li>
+                <img src="images/banner5.jpg" alt="">
+                <a href="javascript:;">
+                    <img src="images/play.png" alt="">
+                </a>
+            </li>
+            <li class="banner_sl">
+                <img src="images/banner3.jpg" alt="">
+                <a href="javascript:;">
+                    <img src="images/play.png" alt="">
+                </a>
+            </li>
+            <li class="banner_sr">
+                <img src="images/banner4.jpg" alt="">
+                <a href="javascript:;">
+                    <img src="images/play.png" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>           <!--banner-->
+<div class="content">
+    <div class="hot clearfix">
+        <dl class="hot_l clearfix" id="hot_l">
+            <dt>
+                <h2>热点聚焦</h2>
+            </dt>
+            <dd class="hot_dd_first">
+                <div>
+                    <img src="images/hot1.jpg" alt="">
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_first_f" href="javascript:;">1111111111111111111111111111111</a>
+                <p>222222222222222222222222</p>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                    <span>
+                        <i></i>
+                        <em>11111111111111111</em>
+                    </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                    <span>
+                        <i></i>
+                        <em>11111111111111111</em>
+                    </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                    <span>
+                        <i></i>
+                        <em>11111111111111111</em>
+                    </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                    <span>
+                        <i></i>
+                        <em>11111111111111111</em>
+                    </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                    <span>
+                        <i></i>
+                        <em>11111111111111111</em>
+                    </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                    <span>
+                        <i></i>
+                        <em>11111111111111111</em>
+                    </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                    <span>
+                        <i></i>
+                        <em>11111111111111111</em>
+                    </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                    <span>
+                        <i></i>
+                        <em>11111111111111111</em>
+                    </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                    <span>
+                        <i></i>
+                        <em>11111111111111111</em>
+                    </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                    <span>
+                        <i></i>
+                        <em>11111111111111111</em>
+                    </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                    <span>
+                        <i></i>
+                        <em>11111111111111111</em>
+                    </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+        </dl>
+        <div class="hot_r" id="hot_r">
+            <h2>影视排行</h2>
+            <div class="hot_r_c">
+                <div class="clearfix" id="hot_r_c_div">
+                    <span class="on">全部</span>
+                    <span>电视剧</span>
+                    <span>电影</span>
+                    <span>综艺</span>
+                    <span>动漫</span>
+                </div>
+                <dl class="active">
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot3.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>11111111111111111</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot4.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>2222222222222222222</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot5.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>33333333333333333333</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot6.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>44444444444444444</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot8.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>5555555555555555555</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>              <!--hot-->
+    <div class="teleplay clearfix">
+        <div class="teleplay_l">
+            <div class="clearfix teleplay_l_t" id="teleplay_l_t">
+                <h2>最新电视剧</h2>
+                <ul class="clearfix">
+                    <li><a href="javascript:;">军事</a>/</li>
+                    <li><a href="javascript:;">言情</a>/</li>
+                    <li><a href="javascript:;">古装</a>/</li>
+                    <li><a href="javascript:;">喜剧</a>/</li>
+                    <li><a href="javascript:;">都市</a>/</li>
+                    <li><a href="javascript:;">谍战</a>/</li>
+                    <li><a href="javascript:;">更多>></a></li>
+                </ul>
+                <div>
+                    <input type="button" value="<">
+                    <span>1/3</span>
+                    <input type="button" value=">">
+                </div>
+            </div>
+            <ul class="teleplay_l_b clearfix" id="teleplay_l_b">
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="hot_r" id="teleplay_r">
+            <h2>影视排行</h2>
+            <div class="hot_r_c">
+                <div class="clearfix" id="teleplay_div">
+                    <span class="on">全部</span>
+                    <span>电视剧</span>
+                    <span>电影</span>
+                    <span>综艺</span>
+                    <span>动漫</span>
+                </div>
+                <dl class="active">
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot3.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>11111111111111111</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot4.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>2222222222222222222</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot5.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>33333333333333333333</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot6.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>44444444444444444</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot8.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>5555555555555555555</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="teleplay_r_b" id="teleplay_r_b">
+            <dl class="teleplay_r_h clearfix">
+                <dt>电视剧筛选</dt>
+                <dd><a href="javascript:;">更多>></a></dd>
+            </dl>
+            <dl class="teleplay_r_type clearfix">
+                <dt class="teleplay_r_type_dt1">类型</dt>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+            </dl>
+            <dl class="teleplay_r_type clearfix">
+                <dt>类型</dt>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+            </dl>
+            <dl class="teleplay_r_type clearfix">
+                <dt>类型</dt>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+            </dl>
+        </div>
+    </div>         <!--teleplay-->
+    <div class="comment clearfix">
+        <dl class="hot_l clearfix" id="comment_l">
+            <dt>
+              <h2>电视神剧吐槽</h2>
+            </dt>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+        </dl>
+        <div class="comment_r">
+            <dl class="comment_r_h clearfix" id="comment_r">
+                <dt>卫士直播</dt>
+                <dd><a href="javascript:;">更多>></a></dd>
+            </dl>
+            <ul class="comment_r_b"  id="comment_r_b">
+                <li>
+                    <a class="comment_r_b_a on" href="javascript:;">
+                        <img src="images/comment1.png" alt="">
+                        湖南卫士
+                    </a>
+                    <dl class="active">
+                        <dd><a href="javascript:;">xxxx</a></dd>
+                        <dd><a href="javascript:;">2222</a></dd>
+                        <dd><a href="javascript:;">3333</a></dd>
+                        <dd><a href="javascript:;">4444</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <a class="comment_r_b_a" href="javascript:;">
+                        <img src="images/comment2.png" alt="">
+                        江苏卫士
+                    </a>
+                    <dl>
+                        <dd><a href="javascript:;">aaaaaaaa</a></dd>
+                        <dd><a href="javascript:;">2222</a></dd>
+                        <dd><a href="javascript:;">3333</a></dd>
+                        <dd><a href="javascript:;">4444</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <a class="comment_r_b_a" href="javascript:;">
+                        <img src="images/comment3.png" alt="">
+                        东方卫士
+                    </a>
+                    <dl>
+                        <dd><a href="javascript:;">dddd</a></dd>
+                        <dd><a href="javascript:;">2222</a></dd>
+                        <dd><a href="javascript:;">3333</a></dd>
+                        <dd><a href="javascript:;">4444</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <a class="comment_r_b_a" href="javascript:;">
+                        <img src="images/comment4.png" alt="">
+                        浙江卫士
+                    </a>
+                    <dl>
+                        <dd><a href="javascript:;">ffff</a></dd>
+                        <dd><a href="javascript:;">2222</a></dd>
+                        <dd><a href="javascript:;">3333</a></dd>
+                        <dd><a href="javascript:;">4444</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>          <!--comment-->
+    <div class="teleplay clearfix">
+        <div class="teleplay_l">
+            <div class="clearfix teleplay_l_t" id="moive_l_t">
+                <h2>热门电影</h2>
+                <ul class="clearfix">
+                    <li><a href="javascript:;">军事</a>/</li>
+                    <li><a href="javascript:;">言情</a>/</li>
+                    <li><a href="javascript:;">古装</a>/</li>
+                    <li><a href="javascript:;">喜剧</a>/</li>
+                    <li><a href="javascript:;">都市</a>/</li>
+                    <li><a href="javascript:;">谍战</a>/</li>
+                    <li><a href="javascript:;">更多>></a></li>
+                </ul>
+                <div>
+                    <input type="button" value="<">
+                    <span>1/3</span>
+                    <input type="button" value=">">
+                </div>
+            </div>
+            <ul class="teleplay_l_b clearfix" id="moive_l_b">
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <a class="teleplay_a" href="javascript:;">
+                            <img src="images/teleplay1.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>更新至15集</em>
+                            </span>
+                        </a>
+                        <span class="teleplay_s1">老婆大人是80后</span>
+                        <span class="teleplay_s2">作女李小冉魂战杜淳</span>
+                    </p>
+                    <div class="teleplay_show">
+                        <a href="javascript:;" class="teleplay_a1">
+                            <span></span>
+                            <dl>
+                                <dt>
+                                <div>老婆大人是80后</div>
+                                <em class="clearfix">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i"></i>
+                                    <i class="teleplay_i_f">6.9</i>
+                                </em>
+                                </dt>
+                                <dd>大陆 言情 2015</dd>
+                                <dd>导演：xxx</dd>
+                                <dd>主演：xxx，xxx，xxx</dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;" class="teleplay_a2">
+                            <img src="images/teleplay3.png" alt="">
+                            立即播放
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="hot_r" id="moive_r">
+            <h2>影视排行</h2>
+            <div class="hot_r_c">
+                <div class="clearfix" id="moive_div">
+                    <span class="on">全部</span>
+                    <span>电视剧</span>
+                    <span>电影</span>
+                    <span>综艺</span>
+                    <span>动漫</span>
+                </div>
+                <dl class="active">
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot3.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>11111111111111111</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot4.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>2222222222222222222</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot5.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>33333333333333333333</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot6.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>44444444444444444</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="javascript:;">
+                            <img src="images/hot8.jpg" alt="">
+                            <span>
+                                <i></i>
+                                <em>5555555555555555555</em>
+                            </span>
+                        </a>
+                    </dt>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="teleplay_r_b" id="moive_r_b">
+            <dl class="teleplay_r_h clearfix">
+                <dt>电视剧筛选</dt>
+                <dd><a href="javascript:;">更多>></a></dd>
+            </dl>
+            <dl class="teleplay_r_type clearfix">
+                <dt class="teleplay_r_type_dt1">类型</dt>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+            </dl>
+            <dl class="teleplay_r_type clearfix">
+                <dt>类型</dt>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+            </dl>
+            <dl class="teleplay_r_type clearfix">
+                <dt>类型</dt>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+                <dd><a href="javascript:;">更多</a></dd>
+            </dl>
+        </div>
+    </div>         <!--movie-->
+    <div class="comment clearfix">
+        <dl class="hot_l clearfix" id="film_l">
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                <strong></strong>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                <strong></strong>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                <strong></strong>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                <strong></strong>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                <strong></strong>
+            </dd>
+        </dl>
+        <div class="comment_r">
+            <dl class="comment_r_h clearfix" id="film_r">
+                <dt>卫士直播</dt>
+                <dd><a href="javascript:;">更多>></a></dd>
+            </dl>
+            <img src="images/banner6.jpg" alt="">
+        </div>
+    </div>          <!--film-->
+    <div class="teleplay clearfix">
+        <div class="fl box">
+            <div class="teleplay_l">
+                <div class="clearfix teleplay_l_t" id="show_l_t">
+                    <h2>百变综艺</h2>
+                    <ul class="clearfix">
+                        <li><a href="javascript:;">古装</a>/</li>
+                        <li><a href="javascript:;">喜剧</a>/</li>
+                        <li><a href="javascript:;">都市</a>/</li>
+                        <li><a href="javascript:;">谍战</a>/</li>
+                        <li><a href="javascript:;">更多>></a></li>
+                    </ul>
+                    <div>
+                        <input type="button" value="<">
+                        <span>1/3</span>
+                        <input type="button" value=">">
+                    </div>
+                </div>
+            </div>
+            <dl class="show_l clearfix" id="show_l">
+                <dd class="show_dd_first">
+                    <div>
+                        <img src="images/show.jpg" alt="">
+                        <a href="javascript:;">
+                            <img src="images/play.png" alt="">
+                        </a>
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    </div>
+                    <a class="show_dd_first_f" href="javascript:;">1111111111111111111111111111111</a>
+                    <p>222222222222222222222222</p>
+                </dd>
+                <dd>
+                    <div>
+                        <img src="images/show1.jpg" alt="">
+                    <span>
+                        <i></i>
+                        <em>11111111111111111</em>
+                    </span>
+                        <a href="javascript:;">
+                            <img src="images/play.png" alt="">
+                        </a>
+                    </div>
+                    <a class="show_dd_f" href="javascript:;">111111111111111111111</a>
+                    <p>222222222222222222222222</p>
+                </dd>
+                <dd>
+                    <div>
+                        <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                        <a href="javascript:;">
+                            <img src="images/play.png" alt="">
+                        </a>
+                    </div>
+                    <a class="show_dd_f" href="javascript:;">111111111111111111111</a>
+                    <p>222222222222222222222222</p>
+                </dd>
+                <dd>
+                    <div>
+                        <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                        <a href="javascript:;">
+                            <img src="images/play.png" alt="">
+                        </a>
+                    </div>
+                    <a class="show_dd_f" href="javascript:;">111111111111111111111</a>
+                    <p>222222222222222222222222</p>
+                </dd>
+                <dd>
+                    <div>
+                        <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                        <a href="javascript:;">
+                            <img src="images/play.png" alt="">
+                        </a>
+                    </div>
+                    <a class="show_dd_f" href="javascript:;">111111111111111111111</a>
+                    <p>222222222222222222222222</p>
+                </dd>
+                <dd>
+                    <div>
+                        <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                        <a href="javascript:;">
+                            <img src="images/play.png" alt="">
+                        </a>
+                    </div>
+                    <a class="show_dd_f" href="javascript:;">111111111111111111111</a>
+                    <p>222222222222222222222222</p>
+                </dd>
+                <dd>
+                    <div>
+                        <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                        <a href="javascript:;">
+                            <img src="images/play.png" alt="">
+                        </a>
+                    </div>
+                    <a class="show_dd_f" href="javascript:;">111111111111111111111</a>
+                    <p>222222222222222222222222</p>
+                </dd>
+            </dl>
+        </div>
+        <dl class="show_r" id="show_r">
+            <dt>
+                <h3>精彩推荐</h3>
+            </dt>
+            <dd class="clearfix">
+                <img src="images/show2.jpg" alt="">
+                <div>
+                    <a href="javascript:;">Running man</a>
+                    <p>韩国跑男，光珠单膝跪地虐获芳心</p>
+                </div>
+            </dd>
+            <dd class="clearfix">
+                <img src="images/show2.jpg" alt="">
+                <div>
+                    <a href="javascript:;">Running man</a>
+                    <p>韩国跑男，光珠单膝跪地虐获芳心</p>
+                </div>
+            </dd>
+            <dd class="clearfix">
+                <img src="images/show2.jpg" alt="">
+                <div>
+                    <a href="javascript:;">Running man</a>
+                    <p>韩国跑男，光珠单膝跪地虐获芳心</p>
+                </div>
+            </dd>
+            <dd class="clearfix">
+                <img src="images/show2.jpg" alt="">
+                <div>
+                    <a href="javascript:;">Running man</a>
+                    <p>韩国跑男，光珠单膝跪地虐获芳心</p>
+                </div>
+            </dd>
+        </dl>
+    </div>         <!--show-->
+    <div class="comment clearfix">
+        <dl class="hot_l clearfix" id="fun_l">
+            <dt class="fun_l clearfix">
+                <h2>娱乐八卦</h2>
+                <a href="javascript:;">更多>></a>
+            </dt>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+        </dl>
+        <div class="comment_r">
+            <dl class="comment_r_h clearfix">
+                <dt>娱乐风云榜</dt>
+            </dl>
+            <ul class="fun_r"  id="fun_r">
+                <li class="clearfix">
+                    <span></span>
+                    <a href="javascript:;">2015年岁末娱乐圈喜事大放送</a>
+                </li>
+                <li class="clearfix">
+                    <span></span>
+                    <a href="javascript:;">2015年岁末娱乐圈喜事大放送</a>
+                </li>
+                <li class="clearfix">
+                    <span></span>
+                    <a href="javascript:;">2015年岁末娱乐圈喜事大放送</a>
+                </li>
+                <li class="clearfix">
+                    <span></span>
+                    <a href="javascript:;">2015年岁末娱乐圈喜事大放送</a>
+                </li>
+            </ul>
+        </div>
+    </div>          <!--fun-->
+    <div class="ad">
+        <a class="ad_l" href="javascript:;">
+            <img src="images/ad1.jpg" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/ad1.jpg" alt="">
+        </a>
+    </div>                        <!--ad-->
+    <div class="teleplay clearfix">
+        <div class="fl box">
+            <div class="teleplay_l">
+                <div class="clearfix teleplay_l_t" id="anime_l_t">
+                    <h2>百变综艺</h2>
+                    <ul class="clearfix">
+                        <li><a href="javascript:;">古装</a>/</li>
+                        <li><a href="javascript:;">喜剧</a>/</li>
+                        <li><a href="javascript:;">都市</a>/</li>
+                        <li><a href="javascript:;">谍战</a>/</li>
+                        <li><a href="javascript:;">更多>></a></li>
+                    </ul>
+                    <div>
+                        <input type="button" value="<">
+                        <span>1/3</span>
+                        <input type="button" value=">">
+                    </div>
+                </div>
+            </div>
+            <dl class="show_l clearfix" id="anime_l">
+                <dd class="show_dd_first">
+                    <div>
+                        <img src="images/show.jpg" alt="">
+                        <a href="javascript:;">
+                            <img src="images/play.png" alt="">
+                        </a>
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                    </div>
+                    <a class="show_dd_first_f" href="javascript:;">1111111111111111111111111111111</a>
+                    <p>222222222222222222222222</p>
+                </dd>
+                <dd>
+                    <div>
+                        <img src="images/show1.jpg" alt="">
+                    <span>
+                        <i></i>
+                        <em>11111111111111111</em>
+                    </span>
+                        <a href="javascript:;">
+                            <img src="images/play.png" alt="">
+                        </a>
+                    </div>
+                    <a class="show_dd_f" href="javascript:;">111111111111111111111</a>
+                    <p>222222222222222222222222</p>
+                </dd>
+                <dd>
+                    <div>
+                        <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                        <a href="javascript:;">
+                            <img src="images/play.png" alt="">
+                        </a>
+                    </div>
+                    <a class="show_dd_f" href="javascript:;">111111111111111111111</a>
+                    <p>222222222222222222222222</p>
+                </dd>
+                <dd>
+                    <div>
+                        <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                        <a href="javascript:;">
+                            <img src="images/play.png" alt="">
+                        </a>
+                    </div>
+                    <a class="show_dd_f" href="javascript:;">111111111111111111111</a>
+                    <p>222222222222222222222222</p>
+                </dd>
+                <dd>
+                    <div>
+                        <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                        <a href="javascript:;">
+                            <img src="images/play.png" alt="">
+                        </a>
+                    </div>
+                    <a class="show_dd_f" href="javascript:;">111111111111111111111</a>
+                    <p>222222222222222222222222</p>
+                </dd>
+                <dd>
+                    <div>
+                        <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                        <a href="javascript:;">
+                            <img src="images/play.png" alt="">
+                        </a>
+                    </div>
+                    <a class="show_dd_f" href="javascript:;">111111111111111111111</a>
+                    <p>222222222222222222222222</p>
+                </dd>
+                <dd>
+                    <div>
+                        <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                        <a href="javascript:;">
+                            <img src="images/play.png" alt="">
+                        </a>
+                    </div>
+                    <a class="show_dd_f" href="javascript:;">111111111111111111111</a>
+                    <p>222222222222222222222222</p>
+                </dd>
+            </dl>
+        </div>
+        <div class="hot_r" id="anime_r">
+            <h2>影视排行</h2>
+            <div class="hot_r_c">
+                <div class="clearfix" id="anime_div">
+                    <span class="on">全部</span>
+                    <span>电视剧</span>
+                    <span>电影</span>
+                    <span>综艺</span>
+                    <span>动漫</span>
+                </div>
+                <dl class="active">
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>10</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>10</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>10</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>10</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+                <dl>
+                    <dd class="clearfix">
+                        <span>1</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>2</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>3</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>4</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>5</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>6</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>7</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>8</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>9</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                    <dd class="clearfix">
+                        <span>10</span>
+                        <a href="javascript:;">枪侠</a>
+                        <i>252万</i>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>         <!--anime-->
+    <div class="update clearfix">
+        <div class="fl update_box clearfix">
+            <dl class="update_l clearfix" id="update_l">
+                <dt>每日更新</dt>
+                <dd><a href="javascript:;">周一</a></dd>
+                <dd><a href="javascript:;">周二</a></dd>
+                <dd><a href="javascript:;">周三</a></dd>
+                <dd class="on"><a class="active" href="javascript:;">周四</a></dd>
+                <dd><a href="javascript:;">周五</a></dd>
+                <dd><a href="javascript:;">周六</a></dd>
+                <dd><a href="javascript:;">周七</a></dd>
+            </dl>
+            <div class="fl clearfix update_l_b" id="update_l_b">
+                <dl class="show hot_l clearfix" >
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                </dl>
+                <dl class="hot_l clearfix" >
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>aaaaaaaaaaaaaaaaaa</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>bbbbbbbbbbbbbbbb</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>vvvvvvvvvvvvvvvvvvvv</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>jjjjjjjjjjjjjjjjjjjj</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>dddddddddddddddddd</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                </dl>
+                <dl class="hot_l clearfix" >
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>666666666666666666</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>0000000000000000000</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                </dl>
+                <dl class="hot_l clearfix" >
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>pppppppppppppppp</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>;;;;;;;;;;;;;;;;;;;;</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                </dl>
+                <dl class="hot_l clearfix" >
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                </dl>
+                <dl class="hot_l clearfix" >
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>555555555555555555555</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>yyyyyyyyyyyyyyyyyyy</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>kkkkkkkkkkkkkkkkkkkk</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                </dl>
+                <dl class="hot_l clearfix" >
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                    <dd>
+                        <div>
+                            <img src="images/hot2.jpg" alt="">
+                <span>
+                    <i></i>
+                    <em>11111111111111111</em>
+                </span>
+                            <a href="javascript:;">
+                                <img src="images/play.png" alt="">
+                            </a>
+                        </div>
+                        <a class="hot_dd_f" href="javascript:;">111111111111111111111</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <dl class="update_r clearfix" id="update_r">
+            <dt>动漫热词</dt>
+            <dd>海贼王</dd>
+            <dd>奥特曼</dd>
+            <dd>美少女</dd>
+            <dd>熊出没</dd>
+            <dd>熊出没</dd>
+            <dd>熊出没</dd>
+            <dd>火影</dd>
+            <dd>次洋洋</dd>
+        </dl>
+    </div>           <!--update-->
+    <div class="bottom">
+        <h4 class="clearfix">
+            <span>小咖秀</span>
+            <a href="javascript:;">更多>></a>
+        </h4>
+        <dl class="bottom_c clearfix" id="bottom_l">
+            <dd>
+                <div>
+                    <img class="bottom_pic" src="images/bottom1.jpg"alt="">
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="bottom_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img class="bottom_pic" src="images/bottom1.jpg"alt="">
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="bottom_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img class="bottom_pic" src="images/bottom1.jpg"alt="">
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="bottom_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img class="bottom_pic" src="images/bottom1.jpg"alt="">
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="bottom_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img class="bottom_pic" src="images/bottom1.jpg"alt="">
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="bottom_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+            <dd>
+                <div>
+                    <img class="bottom_pic" src="images/bottom1.jpg"alt="">
+                    <a href="javascript:;">
+                        <img src="images/play.png" alt="">
+                    </a>
+                </div>
+                <a class="bottom_dd_f" href="javascript:;">111111111111111111111</a>
+            </dd>
+        </dl>
+        <strong>></strong>
+    </div>                    <!--bottom-->
+    <div class="teamwork">
+        <h3>合作专区</h3>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/teamwork1.png" alt="">
+        </a>
+    </div>                  <!--teamwork-->
+    <div class="ad">
+        <a class="ad_l" href="javascript:;">
+            <img src="images/ad1.jpg" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/ad1.jpg" alt="">
+        </a>
+    </div>                        <!--ad-->
+    <div class="footer">
+        <div>
+            <a href="javascript:;">意见反馈</a><span>|</span>
+            <a href="javascript:;">官方微博</a><span>|</span>
+            <a href="javascript:;">加入收藏</a><span>|</span>
+            <a href="javascript:;">版权声明</a><span>|</span>
+            <a href="javascript:;">关于我们</a><span>|</span>
+            <a href="javascript:;">联系方式</a>
+        </div>
+        <p>
+            <span>Copyright © 360安全网址. All Rights Reserved.  </span>
+            <a href="javascript:;">浙ICP证B2-20090064号</a>
+            <i>信息网络传播视听节目许可证1109357号</i>
+        </p>
+    </div>                    <!--footer-->
+</div>
+</body>
+</html>

@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>京东</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oDiv=document.getElementById('search_box1');
+		oDiv.onmouseover=function(){
+			oDiv.className='search_box1 show fl';
+		}
+		oDiv.onmouseout=function(){
+			oDiv.className='search_box1 fl';
+		}
+
+// 我的订单
+
+		var oDiv1=document.getElementById('search_box2');
+		oDiv1.onmouseover=function(){
+		 	oDiv1.className='search_box2 on fl';
+		}
+		oDiv1.onmouseout=function(){
+		 	oDiv1.className='search_box2 fl';
+		}
+
+// 我的京东
+		var oNav_l=document.getElementById('nav_l');
+		var aLi=oNav_l.getElementsByTagName('li');
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].onmouseover=function(){
+					this.className='nav_show';
+				}
+				aLi[i].onmouseout=function(){
+					this.className='';
+				}
+			}
+// 侧边栏
+		var oNav_c_t=document.getElementById('nav_c_t');
+		var aLi1=oNav_c_t.getElementsByTagName('li');
+		var aSpan1=oNav_c_t.getElementsByTagName('span');
+			for(var i=0;i<aSpan1.length;i++){
+				aSpan1[i].index=i;
+				aSpan1[i].onmouseover=function(){
+					for(var i=0;i<aSpan1.length;i++){
+						aSpan1[i].className='';
+						aLi1[i].className='';
+					}
+					this.className='on';
+					aLi1[this.index].className='active';
+				}
+			}
+// 选项卡
+	}
+	</script>
+</head>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<body>
+	<div class="header">
+		<div class="header_t clearfix">
+			<div class="fl clearfix">
+				<span class="header_t_1">
+					<a href="#">收藏京东</a>
+				</span>
+				<span class="header_t_2">
+					<a href="#">关注京东</a>
+				</span>
+				<span class="header_t_3">
+					<a href="#">北京</a>
+					<a href="#">[更换]</a>
+				</span>
+			</div>
+			<ul class="fr header_t_r clearfix">
+				<li class="header_t_r4">
+					<a href="#">您好！请登录</a>
+					<a href="#">免费注册</a>
+				</li>
+				<li>
+					<a href="#">我的订单</a>
+				</li>
+				<li class="header_t_r1">
+					<a href="#">会员俱乐部</a>
+				</li>
+				<li class="header_t_r2">
+					<a href="#">企业频道</a>
+				</li>
+				<li class="header_t_r3 clearfix">
+					<a class="fl" href="#">手机京东</a>
+					<i></i>
+				</li>
+				<li class="clearfix">
+					<a class="fl" href="#">客户服务</a>
+					<i></i>
+				</li>
+				<li class="clearfix">
+					<a class="fl" href="#">网站导航</a>
+					<i></i>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header -->
+	<div class="search clearfix">
+		<a class="search_l fl" href="#">京东</a>
+		<div class="search_r fl">
+			<div class="search_r_t clearfix">
+				<div class="search_r_t_l fl clearfix">
+					<input class="btn1 fl" type="text" placeholder="请输入文字"/>
+					<input class="btn2 fl" type="button" value="搜索"/>
+				</div>
+				<div class="fl search_box1" id="search_box1">
+					<div class="search_r_t_c clearfix">
+						<a class="fl" href="#">我的京东</a>
+						<div class="fl"></div>
+					</div>
+					<p class="search_list1">welcome welcome welcome</p>
+				</div>
+				<div class="fl search_box2" id="search_box2">
+					<div class="search_r_t_r fl clearfix">
+						<a class="fl" href="#">去购物车结算</a>
+						<div class="fl"></div>
+					</div>
+					<p class="search_list2">welcome welcome welcome</p>
+				</div>
+			</div>
+			<dl class="search_r_b clearfix">
+				<dt class="fl"><a href="#">热门搜索:</a></dt>
+				<dd class="fl"><a href="#">上新满减</a></dd>
+				<dd class="fl"><a href="#">上新满减</a></dd>
+				<dd class="fl"><a href="#">上新满减</a></dd>
+				<dd class="fl"><a href="#">上新满减</a></dd>
+				<dd class="fl"><a href="#">上新满减</a></dd>
+				<dd class="fl"><a href="#">上新满减</a></dd>
+			</dl>
+		</div>
+		<img src="images/search_logo.png">
+	</div>
+	<!-- search -->
+	<div class="nav clearfix">
+		<div class="nav_t fl clearfix">
+			<p class="fl">全部商品分类</p>
+			<ul class="fl clearfix">
+				<li class="active"><a href="#">首页</a></li>
+				<li><a href="#">服装城</a></li>
+				<li><a href="#">食品</a></li>
+				<li><a href="#">团购</a></li>
+				<li><a href="#">夺宝岛</a></li>
+				<li><a href="#">闪购</a></li>
+				<li><a href="#">金融</a></li>
+			</ul>
+			<em class="fr"><a href="#">玩逼格</a></em>
+		</div>
+		<ul class="nav_l fl" id="nav_l">
+			<li>
+				<div class="clearfix">
+					<a class="fl" href="#">图书、</a>
+					<a class="fl" href="#">音响、</a>
+					<a class="fl" href="#">数字商品</a>
+					<span class="fr">></span>
+				</div>
+				<p>1</p>
+			</li>
+			<li>
+				<div class="clearfix">
+					<a class="fl" href="#">图书、</a>
+					<a class="fl" href="#">音响、</a>
+					<a class="fl" href="#">数字商品</a>
+					<span class="fr">></span>
+				</div>
+				<p>2</p>
+			</li>
+			<li>
+				<div class="clearfix">
+					<a class="fl" href="#">图书、</a>
+					<a class="fl" href="#">音响、</a>
+					<a class="fl" href="#">数字商品</a>
+					<span class="fr">></span>
+				</div>
+				<p>3</p>
+			</li>
+			<li>
+				<div class="clearfix">
+					<a class="fl" href="#">图书、</a>
+					<a class="fl" href="#">音响、</a>
+					<a class="fl" href="#">数字商品</a>
+					<span class="fr">></span>
+				</div>
+				<p>4</p>
+			</li>
+			<li>
+				<div class="clearfix">
+					<a class="fl" href="#">图书、</a>
+					<a class="fl" href="#">音响、</a>
+					<a class="fl" href="#">数字商品</a>
+					<span class="fr">></span>
+				</div>
+				<p>5</p>
+			</li>
+			<li>
+				<div class="clearfix">
+					<a class="fl" href="#">图书、</a>
+					<a class="fl" href="#">音响、</a>
+					<a class="fl" href="#">数字商品</a>
+					<span class="fr">></span>
+				</div>
+				<p>6</p>
+			</li>
+			<li>
+				<div class="clearfix">
+					<a class="fl" href="#">图书、</a>
+					<a class="fl" href="#">音响、</a>
+					<a class="fl" href="#">数字商品</a>
+					<span class="fr">></span>
+				</div>
+				<p>7</p>
+			</li>
+			<li>
+				<div class="clearfix">
+					<a class="fl" href="#">图书、</a>
+					<a class="fl" href="#">音响、</a>
+					<a class="fl" href="#">数字商品</a>
+					<span class="fr">></span>
+				</div>
+				<p>8</p>
+			</li>
+			<li>
+				<div class="clearfix">
+					<a class="fl" href="#">图书、</a>
+					<a class="fl" href="#">音响、</a>
+					<a class="fl" href="#">数字商品</a>
+					<span class="fr">></span>
+				</div>
+				<p>9</p>
+			</li>
+			<li>
+				<div class="clearfix">
+					<a class="fl" href="#">图书、</a>
+					<a class="fl" href="#">音响、</a>
+					<a class="fl" href="#">数字商品</a>
+					<span class="fr">></span>
+				</div>
+				<p>10</p>
+			</li>
+			<li>
+				<div class="clearfix">
+					<a class="fl" href="#">图书、</a>
+					<a class="fl" href="#">音响、</a>
+					<a class="fl" href="#">数字商品</a>
+					<span class="fr">></span>
+				</div>
+				<p>11</p>
+			</li>
+			<li>
+				<div class="clearfix">
+					<a class="fl" href="#">图书、</a>
+					<a class="fl" href="#">音响、</a>
+					<a class="fl" href="#">数字商品</a>
+					<span class="fr">></span>
+				</div>
+				<p>12</p>
+			</li>
+			<li>
+				<div class="clearfix">
+					<a class="fl" href="#">图书、</a>
+					<a class="fl" href="#">音响、</a>
+					<a class="fl" href="#">数字商品</a>
+					<span class="fr">></span>
+				</div>
+				<p>13</p>
+			</li>
+			<li>
+				<div class="clearfix last">
+					<a class="fl" href="#">图书、</a>
+					<a class="fl" href="#">音响、</a>
+					<a class="fl" href="#">数字商品</a>
+					<span class="fr">></span>
+				</div>
+				<p>14</p>
+			</li>
+		</ul>
+		<div class="nav_c fl">
+			<div class="nav_c_t" id="nav_c_t">
+				<ul>
+					<li class="active"><a href="#"><img src="images/nav_c_t1.jpg"></a></li>
+					<li><a href="#"><img src="images/img_001.jpg"></a></li>
+					<li><a href="#"><img src="images/nav_c_t1.jpg"></a></li>
+					<li><a href="#"><img src="images/img_002.jpg"></a></li>
+					<li><a href="#"><img src="images/nav_c_t1.jpg"></a></li>
+					<li><a href="#"><img src="images/img_001.jpg"></a></li>
+				</ul>
+				<div>
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span class="on">5</span>
+					<span>6</span>
+				</div>
+			</div>
+			<div class="nav_c_b">
+				<div class="box">
+					<ul class="clearfix" id="">
+						<li><a href="#"><img src="images/nav_c_b1.jpg"></a></li>
+						<li><a href="#"><img src="images/nav_c_b2.jpg"></a></li>
+						<li><a href="#"><img src="images/nav_c_b1.jpg"></a></li>
+						<li><a href="#"><img src="images/nav_c_b1.jpg"></a></li>
+						<li><a href="#"><img src="images/nav_c_b1.jpg"></a></li>
+						<li><a href="#"><img src="images/nav_c_b1.jpg"></a></li>
+					</ul>
+				</div>
+				<div>
+					<span class="btn1">></span>
+					<span class="btn2"><</span>
+				</div>
+			</div>
+		</div>
+		<div class="nav_r fr">
+			<div class="nav_r_t">
+				<a href="#"><img src="images/nav_r_t1.jpg"></a>
+			</div>
+			<div class="nav_r_c">
+				<h4 class="clearfix">
+					<a class="fl" href="#">京东快报</a>
+					<a class="fr" href="#">更多快报></a>
+				</h4>
+				<div class="clearfix">
+					<ul class="fl">
+						<li><a href="#">腕表劲爆限量秒杀 抢</a></li>
+						<li><a href="#">腕表劲爆限量秒杀 抢</a></li>
+						<li><a href="#">腕表劲爆限量秒杀 抢</a></li>
+						<li><a href="#">腕表劲爆限量秒杀 抢</a></li>
+					</ul>
+					<ul class="fl">
+						<li><a href="#">腕表劲爆限量秒杀 抢</a></li>
+						<li><a href="#">腕表劲爆限量秒杀 抢</a></li>
+						<li><a href="#">腕表劲爆限量秒杀 抢</a></li>
+						<li><a href="#">腕表劲爆限量秒杀 抢</a></li>
+					</ul>
+				</div>			
+			</div>
+			<ul class="nav_r_b clearfix">
+				<li class="li1"><a href="#">话费</a></li>
+				<li class="li1"><a href="#">话费</a></li>
+				<li class="li1"><a href="#">话费</a></li>
+				<li class="li1"><a href="#">话费</a></li>
+				<li class="li2"><a href="#">话费</a></li>
+				<li class="li2"><a href="#">话费</a></li>
+				<li class="li2"><a href="#">话费</a></li>
+				<li class="li2"><a href="#">话费</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- nav -->
+	<div class="life_t clearfix">
+		<h4 class="fl">生活的橱窗</h4>
+		<a class="fl" href="#">每天展示精彩！</a>
+	</div>
+	<div class="life_box">
+		<ul class="life_c clearfix">
+			<li>
+				<img src="images/life_c1.jpg"/>
+				<div>
+					<p></p>
+					<dl>
+						<dt>品牌街</dt>
+						<dd><a href="#">荣耀X2免费抽</a></dd>
+						<dd class="dd1"><a href="#">无人机送货</a></dd>
+						<dd class="dd2"><a href="#">&middot;更多品牌</a></dd>
+						<dd><a href="#">&middot;进入品牌街</a></dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<img src="images/life_c1.jpg"/>
+				<div>
+					<p></p>
+					<dl>
+						<dt>品牌街</dt>
+						<dd><a href="#">荣耀X2免费抽</a></dd>
+						<dd class="dd1"><a href="#">无人机送货</a></dd>
+						<dd class="dd2"><a href="#">&middot;更多品牌</a></dd>
+						<dd><a href="#">&middot;进入品牌街</a></dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<img src="images/life_c1.jpg"/>
+				<div>
+					<p></p>
+					<dl>
+						<dt>品牌街</dt>
+						<dd><a href="#">荣耀X2免费抽</a></dd>
+						<dd class="dd1"><a href="#">无人机送货</a></dd>
+						<dd class="dd2"><a href="#">&middot;更多品牌</a></dd>
+						<dd><a href="#">&middot;进入品牌街</a></dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<img src="images/life_c1.jpg"/>
+				<div>
+					<p></p>
+					<dl>
+						<dt>品牌街</dt>
+						<dd><a href="#">荣耀X2免费抽</a></dd>
+						<dd class="dd1"><a href="#">无人机送货</a></dd>
+						<dd class="dd2"><a href="#">&middot;更多品牌</a></dd>
+						<dd><a href="#">&middot;进入品牌街</a></dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<img src="images/life_c1.jpg"/>
+				<div>
+					<p></p>
+					<dl>
+						<dt>品牌街</dt>
+						<dd><a href="#">荣耀X2免费抽</a></dd>
+						<dd class="dd1"><a href="#">无人机送货</a></dd>
+						<dd class="dd2"><a href="#">&middot;更多品牌</a></dd>
+						<dd><a href="#">&middot;进入品牌街</a></dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<img src="images/life_c1.jpg"/>
+				<div>
+					<p></p>
+					<dl>
+						<dt>品牌街</dt>
+						<dd><a href="#">荣耀X2免费抽</a></dd>
+						<dd class="dd1"><a href="#">无人机送货</a></dd>
+						<dd class="dd2"><a href="#">&middot;更多品牌</a></dd>
+						<dd><a href="#">&middot;进入品牌街</a></dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<img src="images/life_c1.jpg"/>
+				<div>
+					<p></p>
+					<dl>
+						<dt>品牌街</dt>
+						<dd><a href="#">荣耀X2免费抽</a></dd>
+						<dd class="dd1"><a href="#">无人机送货</a></dd>
+						<dd class="dd2"><a href="#">&middot;更多品牌</a></dd>
+						<dd><a href="#">&middot;进入品牌街</a></dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<img src="images/life_c1.jpg"/>
+				<div>
+					<p></p>
+					<dl>
+						<dt>品牌街</dt>
+						<dd><a href="#">荣耀X2免费抽</a></dd>
+						<dd class="dd1"><a href="#">无人机送货</a></dd>
+						<dd class="dd2"><a href="#">&middot;更多品牌</a></dd>
+						<dd><a href="#">&middot;进入品牌街</a></dd>
+					</dl>
+				</div>
+			</li>
+		</ul>		
+		<ul class="life_b clearfix" >
+			<li class="fl clearfix">
+				<img class="fr" src="images/life_b1.jpg">
+				<div class="fl">
+					<p><a href="#">清洁洗护新选择</a></p>
+					<span><a href="#">全场满99减50</a></span>					
+				</div>
+			</li>
+			<li class="fl clearfix">
+				<img class="fr" src="images/life_b1.jpg">
+				<div class="fl">
+					<p><a href="#">清洁洗护新选择</a></p>
+					<span><a href="#">全场满99减50</a></span>					
+				</div>
+			</li>
+			<li class="fl clearfix">
+				<img class="fr" src="images/life_b1.jpg">
+				<div class="fl">
+					<p><a href="#">清洁洗护新选择</a></p>
+					<span><a href="#">全场满99减50</a></span>					
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!-- 生活 -->
+    <div class="houseHold clearfix">
+    	<h3 class="clearfix">
+        	<div class="hh_l fl clearfix">
+            	<b class="fl"></b>
+                <span class="fl">家电通讯</span>
+            </div>
+            <div class="hh_c fl clearfix">
+            	<ul class="clearfix">
+                	<li>
+                    	<span>特价商品</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>大家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>小家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>手机通讯</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>汽车五金</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="hh_r fr clearfix">
+            	<a class="fr" href="#">大家电配送》</a>
+                <a class="fr" href="#">合约计划说明》</a>
+            </div>
+        </h3><!--标题重用部分-->
+    	<div class="hh_cont clearfix">
+        	<div class="hh_cont_l fl clearfix">
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+                <a href="#">
+                	<img src="images/sy_bg_14.png" alt="" />
+                </a>
+            </div>
+        	<div class="hh_cont_c fl clearfix">
+            	<div class="hh_cont_c_l fl clearfix">
+                	<div class="hh_cont_c_l_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_l_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+                <div class="hh_cont_c_c fl">
+                	<div class="hh_cont_c_c_t">
+                    	<img src="images/sy_img_005.gif" alt="" />
+                        <div class="cont_c_c_t_pos clearfix">
+                        	<span class="togreen"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="hh_cont_c_c_b clearfix">
+                    	<div class="c_c_b_l fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_c fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_r fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="hh_cont_c_r fl clearfix">
+                	<div class="hh_cont_c_r_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_r_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+            </div>
+            <div class="hh_cont_r fr clearfix">
+            	<ul>
+                	<li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                </ul>
+            	<div class="kq_logo">
+                	<img src="images/sy_img_kq.jpg" alt="" />
+                    <div class="kq_logo_d">
+                    	<span class="togreen"></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!--家电通讯-->
+    <div class="houseHold clearfix">
+    	<h3 class="clearfix">
+        	<div class="hh_l fl clearfix">
+            	<b class="fl"></b>
+                <span class="fl">电脑数码</span>
+            </div>
+            <div class="hh_c fl clearfix">
+            	<ul class="clearfix">
+                	<li>
+                    	<span>特价商品</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>大家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>小家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>手机通讯</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>汽车五金</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="hh_r fr clearfix">
+            	<a class="fr" href="#">大家电配送》</a>
+                <a class="fr" href="#">合约计划说明》</a>
+            </div>
+        </h3><!--标题重用部分-->
+    	<div class="hh_cont clearfix">
+        	<div class="hh_cont_l fl clearfix">
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+                <a href="#">
+                	<img src="images/sy_bg_14.png" alt="" />
+                </a>
+            </div>
+        	<div class="hh_cont_c fl clearfix">
+            	<div class="hh_cont_c_l fl clearfix">
+                	<div class="hh_cont_c_l_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_l_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+                <div class="hh_cont_c_c fl">
+                	<div class="hh_cont_c_c_t">
+                    	<img src="images/sy_img_005.gif" alt="" />
+                        <div class="cont_c_c_t_pos clearfix">
+                        	<span class="togreen"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="hh_cont_c_c_b clearfix">
+                    	<div class="c_c_b_l fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_c fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_r fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="hh_cont_c_r fl clearfix">
+                	<div class="hh_cont_c_r_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_r_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+            </div>
+            <div class="hh_cont_r fr clearfix">
+            	<ul>
+                	<li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                </ul>
+            	<div class="kq_logo">
+                	<img src="images/sy_img_kq.jpg" alt="" />
+                    <div class="kq_logo_d">
+                    	<span class="togreen"></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!--电脑数码-->
+    <div class="houseHold clearfix">
+    	<h3 class="clearfix">
+        	<div class="hh_l fl clearfix">
+            	<b class="fl"></b>
+                <span class="fl">家电通讯</span>
+            </div>
+            <div class="hh_c fl clearfix">
+            	<ul class="clearfix">
+                	<li>
+                    	<span>特价商品</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>大家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>小家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>手机通讯</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>汽车五金</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="hh_r fr clearfix">
+            	<a class="fr" href="#">大家电配送》</a>
+                <a class="fr" href="#">合约计划说明》</a>
+            </div>
+        </h3><!--标题重用部分-->
+    	<div class="hh_cont clearfix">
+        	<div class="hh_cont_l fl clearfix">
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+                <a href="#">
+                	<img src="images/sy_bg_14.png" alt="" />
+                </a>
+            </div>
+        	<div class="hh_cont_c fl clearfix">
+            	<div class="hh_cont_c_l fl clearfix">
+                	<div class="hh_cont_c_l_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_l_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+                <div class="hh_cont_c_c fl">
+                	<div class="hh_cont_c_c_t">
+                    	<img src="images/sy_img_005.gif" alt="" />
+                        <div class="cont_c_c_t_pos clearfix">
+                        	<span class="togreen"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="hh_cont_c_c_b clearfix">
+                    	<div class="c_c_b_l fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_c fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_r fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="hh_cont_c_r fl clearfix">
+                	<div class="hh_cont_c_r_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_r_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+            </div>
+            <div class="hh_cont_r fr clearfix">
+            	<ul>
+                	<li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                </ul>
+            	<div class="kq_logo">
+                	<img src="images/sy_img_kq.jpg" alt="" />
+                    <div class="kq_logo_d">
+                    	<span class="togreen"></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!--服饰鞋包-->
+    <div class="houseHold clearfix">
+    	<h3 class="clearfix">
+        	<div class="hh_l fl clearfix">
+            	<b class="fl"></b>
+                <span class="fl">家电通讯</span>
+            </div>
+            <div class="hh_c fl clearfix">
+            	<ul class="clearfix">
+                	<li>
+                    	<span>特价商品</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>大家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>小家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>手机通讯</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>汽车五金</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="hh_r fr clearfix">
+            	<a class="fr" href="#">大家电配送》</a>
+                <a class="fr" href="#">合约计划说明》</a>
+            </div>
+        </h3><!--标题重用部分-->
+    	<div class="hh_cont clearfix">
+        	<div class="hh_cont_l fl clearfix">
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+                <a href="#">
+                	<img src="images/sy_bg_14.png" alt="" />
+                </a>
+            </div>
+        	<div class="hh_cont_c fl clearfix">
+            	<div class="hh_cont_c_l fl clearfix">
+                	<div class="hh_cont_c_l_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_l_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+                <div class="hh_cont_c_c fl">
+                	<div class="hh_cont_c_c_t">
+                    	<img src="images/sy_img_005.gif" alt="" />
+                        <div class="cont_c_c_t_pos clearfix">
+                        	<span class="togreen"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="hh_cont_c_c_b clearfix">
+                    	<div class="c_c_b_l fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_c fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_r fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="hh_cont_c_r fl clearfix">
+                	<div class="hh_cont_c_r_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_r_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+            </div>
+            <div class="hh_cont_r fr clearfix">
+            	<ul>
+                	<li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                </ul>
+            	<div class="kq_logo">
+                	<img src="images/sy_img_kq.jpg" alt="" />
+                    <div class="kq_logo_d">
+                    	<span class="togreen"></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!--美容珠宝-->
+    <div class="houseHold clearfix">
+    	<h3 class="clearfix">
+        	<div class="hh_l fl clearfix">
+            	<b class="fl"></b>
+                <span class="fl">家电通讯</span>
+            </div>
+            <div class="hh_c fl clearfix">
+            	<ul class="clearfix">
+                	<li>
+                    	<span>特价商品</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>大家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>小家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>手机通讯</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>汽车五金</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="hh_r fr clearfix">
+            	<a class="fr" href="#">大家电配送》</a>
+                <a class="fr" href="#">合约计划说明》</a>
+            </div>
+        </h3><!--标题重用部分-->
+    	<div class="hh_cont clearfix">
+        	<div class="hh_cont_l fl clearfix">
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+                <a href="#">
+                	<img src="images/sy_bg_14.png" alt="" />
+                </a>
+            </div>
+        	<div class="hh_cont_c fl clearfix">
+            	<div class="hh_cont_c_l fl clearfix">
+                	<div class="hh_cont_c_l_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_l_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+                <div class="hh_cont_c_c fl">
+                	<div class="hh_cont_c_c_t">
+                    	<img src="images/sy_img_005.gif" alt="" />
+                        <div class="cont_c_c_t_pos clearfix">
+                        	<span class="togreen"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="hh_cont_c_c_b clearfix">
+                    	<div class="c_c_b_l fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_c fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_r fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="hh_cont_c_r fl clearfix">
+                	<div class="hh_cont_c_r_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_r_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+            </div>
+            <div class="hh_cont_r fr clearfix">
+            	<ul>
+                	<li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                </ul>
+            	<div class="kq_logo">
+                	<img src="images/sy_img_kq.jpg" alt="" />
+                    <div class="kq_logo_d">
+                    	<span class="togreen"></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!--居家生活-->
+    <div class="houseHold clearfix">
+    	<h3 class="clearfix">
+        	<div class="hh_l fl clearfix">
+            	<b class="fl"></b>
+                <span class="fl">家电通讯</span>
+            </div>
+            <div class="hh_c fl clearfix">
+            	<ul class="clearfix">
+                	<li>
+                    	<span>特价商品</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>大家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>小家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>手机通讯</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>汽车五金</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="hh_r fr clearfix">
+            	<a class="fr" href="#">大家电配送》</a>
+                <a class="fr" href="#">合约计划说明》</a>
+            </div>
+        </h3><!--标题重用部分-->
+    	<div class="hh_cont clearfix">
+        	<div class="hh_cont_l fl clearfix">
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+                <a href="#">
+                	<img src="images/sy_bg_14.png" alt="" />
+                </a>
+            </div>
+        	<div class="hh_cont_c fl clearfix">
+            	<div class="hh_cont_c_l fl clearfix">
+                	<div class="hh_cont_c_l_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_l_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+                <div class="hh_cont_c_c fl">
+                	<div class="hh_cont_c_c_t">
+                    	<img src="images/sy_img_005.gif" alt="" />
+                        <div class="cont_c_c_t_pos clearfix">
+                        	<span class="togreen"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="hh_cont_c_c_b clearfix">
+                    	<div class="c_c_b_l fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_c fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_r fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="hh_cont_c_r fl clearfix">
+                	<div class="hh_cont_c_r_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_r_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+            </div>
+            <div class="hh_cont_r fr clearfix">
+            	<ul>
+                	<li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                </ul>
+            	<div class="kq_logo">
+                	<img src="images/sy_img_kq.jpg" alt="" />
+                    <div class="kq_logo_d">
+                    	<span class="togreen"></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!--母婴玩具-->
+    <div class="houseHold clearfix">
+    	<h3 class="clearfix">
+        	<div class="hh_l fl clearfix">
+            	<b class="fl"></b>
+                <span class="fl">家电通讯</span>
+            </div>
+            <div class="hh_c fl clearfix">
+            	<ul class="clearfix">
+                	<li>
+                    	<span>特价商品</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>大家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>小家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>手机通讯</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>汽车五金</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="hh_r fr clearfix">
+            	<a class="fr" href="#">大家电配送》</a>
+                <a class="fr" href="#">合约计划说明》</a>
+            </div>
+        </h3><!--标题重用部分-->
+    	<div class="hh_cont clearfix">
+        	<div class="hh_cont_l fl clearfix">
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+                <a href="#">
+                	<img src="images/sy_bg_14.png" alt="" />
+                </a>
+            </div>
+        	<div class="hh_cont_c fl clearfix">
+            	<div class="hh_cont_c_l fl clearfix">
+                	<div class="hh_cont_c_l_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_l_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+                <div class="hh_cont_c_c fl">
+                	<div class="hh_cont_c_c_t">
+                    	<img src="images/sy_img_005.gif" alt="" />
+                        <div class="cont_c_c_t_pos clearfix">
+                        	<span class="togreen"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="hh_cont_c_c_b clearfix">
+                    	<div class="c_c_b_l fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_c fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_r fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="hh_cont_c_r fl clearfix">
+                	<div class="hh_cont_c_r_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_r_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+            </div>
+            <div class="hh_cont_r fr clearfix">
+            	<ul>
+                	<li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                </ul>
+            	<div class="kq_logo">
+                	<img src="images/sy_img_kq.jpg" alt="" />
+                    <div class="kq_logo_d">
+                    	<span class="togreen"></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!--食品保健-->
+    <div class="houseHold clearfix">
+    	<h3 class="clearfix">
+        	<div class="hh_l fl clearfix">
+            	<b class="fl"></b>
+                <span class="fl">家电通讯</span>
+            </div>
+            <div class="hh_c fl clearfix">
+            	<ul class="clearfix">
+                	<li>
+                    	<span>特价商品</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>大家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>小家电</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>手机通讯</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                    <li>
+                    	<span>汽车五金</span>
+                    	<i class="bg_sj1"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="hh_r fr clearfix">
+            	<a class="fr" href="#">大家电配送》</a>
+                <a class="fr" href="#">合约计划说明》</a>
+            </div>
+        </h3><!--标题重用部分-->
+    	<div class="hh_cont clearfix">
+        	<div class="hh_cont_l fl clearfix">
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+            	<ul class="fl">
+                	<li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>手机配件</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                    <li>话费补贴</li>
+                </ul>
+                <a href="#">
+                	<img src="images/sy_bg_14.png" alt="" />
+                </a>
+            </div>
+        	<div class="hh_cont_c fl clearfix">
+            	<div class="hh_cont_c_l fl clearfix">
+                	<div class="hh_cont_c_l_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_l_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+                <div class="hh_cont_c_c fl">
+                	<div class="hh_cont_c_c_t">
+                    	<img src="images/sy_img_005.gif" alt="" />
+                        <div class="cont_c_c_t_pos clearfix">
+                        	<span class="togreen"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="hh_cont_c_c_b clearfix">
+                    	<div class="c_c_b_l fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_c fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                        <div class="c_c_b_r fl">
+                        	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="hh_cont_c_r fl clearfix">
+                	<div class="hh_cont_c_r_t">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                    <div class="hh_cont_c_r_b">
+                    	<a href="#"><img src="images/sy_bg_15.png" alt="" /></a>
+                        <p>SKG 2025 立式原汁机 慢速榨汁 中国红</p>
+                        <b>￥459.00</b>
+                    </div>
+                </div>
+            </div>
+            <div class="hh_cont_r fr clearfix">
+            	<ul>
+                	<li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                    <li>
+                    	<img src="images/sy_bg_logo11.png" alt="" />
+                        <img src="images/sy_bg_logo11.png" alt="" />
+                    </li>
+                </ul>
+            	<div class="kq_logo">
+                	<img src="images/sy_img_kq.jpg" alt="" />
+                    <div class="kq_logo_d">
+                    	<span class="togreen"></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!--图书影响-->
+	<div class="footer_hot clearfix">
+		<div class="footer_hot_l fl clearfix">
+			<div class="left_box">
+				<h4>热门晒单</h4>
+				<div>
+					<p><a href="#">奥克斯（AUX）KFR-25GW/FK01+3 1匹 挂壁式家用冷暖空调</a></p>
+					<span><a href="#">我表示非常满意，功能强大实用，外观高大上，音质超赞，提醒喝水很人性化！保温时间长，为京东点</a></span>
+				</div>
+				<div class="footer_bd">
+					<p><a href="#">奥克斯（AUX）KFR-25GW/FK01+3 1匹 挂壁式家用冷暖空调</a></p>
+					<span><a href="#">我表示非常满意，功能强大实用，外观高大上，音质超赞，提醒喝水很人性化！保温时间长，为京东点</a></span>
+				</div>
+			</div>
+			<div class="left_box">
+				<h4>热门晒单</h4>
+				<div>
+					<p><a href="#">奥克斯（AUX）KFR-25GW/FK01+3 1匹 挂壁式家用冷暖空调</a></p>
+					<span><a href="#">我表示非常满意，功能强大实用，外观高大上，音质超赞，提醒喝水很人性化！保温时间长，为京东点</a></span>
+				</div>
+				<div class="footer_bd">
+					<p><a href="#">奥克斯（AUX）KFR-25GW/FK01+3 1匹 挂壁式家用冷暖空调</a></p>
+					<span><a href="#">我表示非常满意，功能强大实用，外观高大上，音质超赞，提醒喝水很人性化！保温时间长，为京东点</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="footer_hot_r fr">
+			<div class="right_box">
+				<h4 class="clearfix">
+					<b class="fl">在线读书</b>
+					<a class="fr" href="#">更多在线读书></a>
+				</h4>
+				<ul>
+					<li><a href="#">·《来到地球第一天》新书特惠</a></li>
+					<li><a href="#">·《来到地球第一天》新书特惠</a></li>
+					<li><a href="#">·《来到地球第一天》新书特惠</a></li>
+					<li><a href="#">·《来到地球第一天》新书特惠</a></li>
+				</ul>
+			</div>
+			<h5>订阅促销信息</h5>
+			<input class="btn1" type="text" placeholder="请输入email地址" />
+			<input class="btn2" type="button" value="订阅" />
+		</div>
+	</div>
+	<div class="footer_t clearfix">
+		<dl>
+			<dt><a href="#">购物指南</a></dt>
+			<dd><a href="#">购物流程</a></dd>
+			<dd><a href="#">会员介绍</a></dd>
+			<dd><a href="#">团购/机票</a></dd>
+			<dd><a href="#">常见问题</a></dd>
+			<dd><a href="#">大家电</a></dd>
+			<dd><a href="#">联系客服</a></dd>
+		</dl>
+		<dl>
+			<dt><a href="#">购物指南</a></dt>
+			<dd><a href="#">购物流程</a></dd>
+			<dd><a href="#">会员介绍</a></dd>
+			<dd><a href="#">团购/机票</a></dd>
+			<dd><a href="#">常见问题</a></dd>
+			<dd><a href="#">大家电</a></dd>
+			<dd><a href="#">联系客服</a></dd>
+		</dl>
+		<dl>
+			<dt><a href="#">购物指南</a></dt>
+			<dd><a href="#">购物流程</a></dd>
+			<dd><a href="#">会员介绍</a></dd>
+			<dd><a href="#">团购/机票</a></dd>
+			<dd><a href="#">常见问题</a></dd>
+			<dd><a href="#">大家电</a></dd>
+			<dd><a href="#">联系客服</a></dd>
+		</dl>
+		<dl>
+			<dt><a href="#">购物指南</a></dt>
+			<dd><a href="#">购物流程</a></dd>
+			<dd><a href="#">会员介绍</a></dd>
+			<dd><a href="#">团购/机票</a></dd>
+			<dd><a href="#">常见问题</a></dd>
+			<dd><a href="#">大家电</a></dd>
+			<dd><a href="#">联系客服</a></dd>
+		</dl>
+		<dl>
+			<dt><a href="#">购物指南</a></dt>
+			<dd><a href="#">购物流程</a></dd>
+			<dd><a href="#">会员介绍</a></dd>
+			<dd><a href="#">团购/机票</a></dd>
+			<dd><a href="#">常见问题</a></dd>
+			<dd><a href="#">大家电</a></dd>
+			<dd><a href="#">联系客服</a></dd>
+		</dl>
+		<dl class="footer_map">
+			<dt><a href="#">京东自营覆盖区县</a></dt>
+			<dd><a href="#">京东已向全国1893个区县提供自营配</a></dd>
+			<dd><a href="#">送服务，支持货到付款、POS机刷卡</a></dd>
+			<dd><a href="#">和售后上门服务。</a></dd>
+			<br/>
+			<dd><a href="#">查看详情 ></a></dd>
+		</dl>
+	</div>
+	<div class="footer_b">
+		<ul>
+			<li>
+				<a href="#">关于我们</a>|<a href="#">联系我们</a>|<a href="#">商家入驻</a>|<a href="#">营销中心</a>|<a href="#">营销中心</a>|<a href="#">友情链接</a>|<a href="#">销售联盟</a>|<a href="#">京东社区</a>|<a href="#">京东公益</a>|<a href="#">English Site</a>
+			</li>
+			<li>
+				<a href="#">北京市公安局朝阳分局备案编号110105014669 </a>|<a href="#">京ICP证070359号 </a>|<a href="#">互联网药品信息服务资格证编号(京)-经营性-2014-0008 </a>|<a href="#">新出发京零 字第大120007号</a>
+			</li>
+			<li>
+				<a href="#">音像制品经营许可证苏宿批005号</a>|<a href="#"> 出版物经营许可证编号新出发(苏)批字第N-012号 </a>|<a href="#"> 互联网出版许可证编号新出网证(京)字150号</a>
+			</li>
+			<li>
+				<a href="#">网络文化经营许可证京网文[2011]0168-061号 </a> 违法和不良信息举报电话：4006561155  违法和不良信息举报电话：4006561155  Copyright © 2004-2015  京东JD.com 版权所有
+			</li>
+			<li>
+				京东旗下网站：360TOP  拍拍网  网银在线
+			</li>
+			<li><img src="images/footer_b1.png"></li>
+		</ul>
+	</div>
+	<!-- 结尾 -->
+</body>
+</html>

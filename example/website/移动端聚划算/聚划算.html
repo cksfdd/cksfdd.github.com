@@ -1,0 +1,396 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>移动端聚划算</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<style>
+*{ margin:0; padding:0;}
+a{ text-decoration:none;}
+li{ list-style:none;}
+html{ font-size:20px;}
+.fl{ float:left;}
+.fr{ float:right;}
+.clearFix:after{content: ""; display: block; clear: both;}
+.box header{ width:100%; height:2.525rem; background:-webkit-linear-gradient(#fff,#ebebeb); overflow:hidden; position:relative;}
+.box header a{ float:left;}
+.box .back{ width:3.05rem; height:1.45rem; margin-top:0.55rem; margin-left:0.55rem;}
+.back img{ width:100%;}
+.box .head{ width:9.4rem; height:2.2rem; position:absolute; left:50%; top:50%; margin-left:-4.7rem; margin-top:-1.1rem;}
+.head img{ width:100%;}
+.banner{ position:relative; width:16rem; height:7.45rem; overflow:hidden;}
+.banner ul{ position:absolute; left:0; top:0; width:80rem;}
+.banner ul li{ float:left; width:16rem; height:7.45rem; }
+.banner ul li img{ width:100%;}
+.banner ol{ position:absolute; left:50%; bottom:0; overflow:hidden; margin-left:-1.25rem;}
+.banner ol li{ width:0.25rem; height:0.25rem; background:#a9a9a9; border-radius:50%; margin:0 0.125rem; float:left;}
+.banner .on{ background:#ff4300;}
+.nav{ height:8.05rem; width:100%; margin-bottom:1.075rem;}
+.nav ul{ overflow:hidden; width:15.2rem; margin:0 0.375rem 0 0.425rem;}
+.nav li{ width:3.8rem; height:4.025rem; float:left; text-align:center;}
+.nav li div{ width:2rem; height:2rem; background:#da3809; border-radius:50%; text-align:center; margin:1.025rem 0.9rem 0;}
+.nav li div img{ width:100%;}
+.nav li span{ font-size:0.575rem; color:#999;}
+.hot{width:15rem; margin-left:0.5rem;}
+.hot_header{ border-bottom:0.1rem solid #dcdcdc; line-height:1.8rem; height:1.8rem; overflow:hidden; }
+.hot_header *{ float:left;color:#333; }
+.hot_header i{ width:0.1rem; height:0.75rem; background:#d51938; margin-top:0.525rem;}
+.hot_header span{ font-size:0.675rem; margin-left:0.4rem;}
+.hot_header b{ float:right; font-weight:normal; font-size:0.6rem;}
+.hot_content{ margin-top:0.775rem;}
+.hot_content li{ width:15rem; margin-bottom:0.5rem;}
+.hot_content b{ width:1.5rem; height:3rem; background:#e00202; text-align:center; line-height:3rem; color:#fff; font-size:0.875rem;}
+.hot_content a{ width:4.5rem; height:3rem;}
+.hot_content a img{ width:100%;}
+.sell{ width:7.95rem; height:2.4rem; background:#f4f4f4; color:#999; font-size:0.575rem; padding:0.6rem 0.5rem 0 0.55rem; line-height:0.9rem;}
+.sell div{ width:5.8rem;}
+.sell a{ width:1rem; height:1rem; background:url(img/nav_btn.png) no-repeat; margin-top:0.4rem; background-size:100%;}
+.sell .price{ font-size:0.5rem; }
+.sell .price i{text-decoration:line-through; font-style:normal;}
+.sell .now_price{ font-size:0.65rem; color:#d51938; margin-top:0.45rem;}
+.product_header{ width:100%; height:2rem; background:#f5f5f5; text-align:center; line-height:2rem; font-size:0.675rem; color:#666; margin-bottom:0.5rem;}
+.product_con{ margin-bottom:0.5rem;}
+.product_con_l{ width:3.75rem; height:8.8rem; background:url(img/shop.png) no-repeat; background-size:100%;}
+.product_con_r{ width:11.25rem; height:8.8rem;}
+.product_con_r li{ width:3.75rem; height:2.2rem; border:1px solid #eeeeee; box-sizing:border-box; text-align:center; line-height:2.15rem; font-size:0.65rem; color:#999; float:left;}
+.service{ margin-bottom:0.7rem;}
+.service li{ width:5rem; height:4rem; border:1px solid #dcdcdc; box-sizing:border-box; float:left; text-align:center;}
+.service div{ width:1.125rem; height:1.125rem; background:url(img/apple.png) no-repeat; background-size:100%; margin:0.75rem auto 0.5rem;}
+.service span{ font-size:0.575rem; color:#999;}
+.load_in{ height:2.2rem; width:14.55rem; background:#f8f8f8; line-height:2.2rem; font-size:0.65rem; padding-left:0.75rem; padding-right:0.7rem;}
+.load_in a{color:#333;}
+.load{ margin-right:1.175rem;}
+footer{ height:2.6rem; background:#eee; padding-top:1.05rem;}
+.type{ width:4.75rem; height:0.65rem; line-height:0.65rem; font-size:0.65rem; color:#333; margin:0 auto;}
+footer .connect{ height:0.5rem; width:7.7rem; line-height:0.5rem; font-size:0.5rem;  margin:0.825rem auto 0;}
+footer .connect a{color:#999;}
+</style>
+<script>
+window.onload=function(){
+	document.documentElement.style.fontSize=20*document.documentElement.clientWidth/320+'px';
+	window.onresize=function(){
+		document.documentElement.style.fontSize=20*document.documentElement.clientWidth/320+'px';
+	};
+};
+</script>
+</head>
+<body>
+<div class="box">
+	<header>
+		<a href="javascrip:;" class="back"><img src="img/header.png"/></a>
+		<a href="javascript:;" class="head"><img src="img/header_1.png"/></a>
+	</header>
+	<section class="banner">
+		<ul>
+			<li><a href="javascrip:;"><img src="img/banner.jpg"/></a></li>
+			<li><a href="javascrip:;"><img src="img/banner.jpg"/></a></li>
+			<li><a href="javascrip:;"><img src="img/banner.jpg"/></a></li>
+			<li><a href="javascrip:;"><img src="img/banner.jpg"/></a></li>
+			<li><a href="javascrip:;"><img src="img/banner.jpg"/></a></li>
+		</ul>
+		<ol>
+			<li class="on"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</section>
+	<section class="nav">
+		<ul>
+			<li>
+				<a href="javascript:;">
+					<div><img src="img/nav_1.png"/></div>
+					<span>商品</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<div><img src="img/nav_1.png"/></div>
+					<span>商品</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<div><img src="img/nav_1.png"/></div>
+					<span>商品</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<div><img src="img/nav_1.png"/></div>
+					<span>商品</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<div><img src="img/nav_1.png"/></div>
+					<span>商品</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<div><img src="img/nav_1.png"/></div>
+					<span>商品</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<div><img src="img/nav_1.png"/></div>
+					<span>商品</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<div><img src="img/nav_1.png"/></div>
+					<span>商品</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section class="hot">
+		<div class="hot_header">
+			<i></i>
+			<span>聚划算热卖排行</span>
+			<b>TOP10 </b>
+		</div>
+		<ul class="hot_content">
+			<li class="clearFix">
+				<b class="fl">1</b>
+				<a href="javascript:;" class="fl"><img src="img/nav.jpg"/></a>
+				<div class="fl clearFix sell">
+					<div class="fl">
+						<p>已售68423</p>
+						<span>2.3折</span>
+						<span class="price">&yen;<i>299</i></span>
+					</div>
+					<span class="fl now_price">&yen;51</span>
+					<a href="javascript:;" class="fr"></a>
+				</div>
+				
+			</li>
+			<li class="clearFix">
+				<b class="fl">1</b>
+				<a href="javascript:;" class="fl"><img src="img/nav.jpg"/></a>
+				<div class="fl clearFix sell">
+					<div class="fl">
+						<p>已售68423</p>
+						<span>2.3折</span>
+						<span class="price">&yen;<i>299</i></span>
+					</div>
+					<span class="fl now_price">&yen;51</span>
+					<a href="javascript:;" class="fr"></a>
+				</div>
+				
+			</li>
+			<li class="clearFix">
+				<b class="fl">1</b>
+				<a href="javascript:;" class="fl"><img src="img/nav.jpg"/></a>
+				<div class="fl clearFix sell">
+					<div class="fl">
+						<p>已售68423</p>
+						<span>2.3折</span>
+						<span class="price">&yen;<i>299</i></span>
+					</div>
+					<span class="fl now_price">&yen;51</span>
+					<a href="javascript:;" class="fr"></a>
+				</div>
+				
+			</li>
+			<li class="clearFix">
+				<b class="fl">1</b>
+				<a href="javascript:;" class="fl"><img src="img/nav.jpg"/></a>
+				<div class="fl clearFix sell">
+					<div class="fl">
+						<p>已售68423</p>
+						<span>2.3折</span>
+						<span class="price">&yen;<i>299</i></span>
+					</div>
+					<span class="fl now_price">&yen;51</span>
+					<a href="javascript:;" class="fr"></a>
+				</div>
+				
+			</li>
+			<li class="clearFix">
+				<b class="fl">1</b>
+				<a href="javascript:;" class="fl"><img src="img/nav.jpg"/></a>
+				<div class="fl clearFix sell">
+					<div class="fl">
+						<p>已售68423</p>
+						<span>2.3折</span>
+						<span class="price">&yen;<i>299</i></span>
+					</div>
+					<span class="fl now_price">&yen;51</span>
+					<a href="javascript:;" class="fr"></a>
+				</div>
+				
+			</li>
+			<li class="clearFix">
+				<b class="fl">1</b>
+				<a href="javascript:;" class="fl"><img src="img/nav.jpg"/></a>
+				<div class="fl clearFix sell">
+					<div class="fl">
+						<p>已售68423</p>
+						<span>2.3折</span>
+						<span class="price">&yen;<i>299</i></span>
+					</div>
+					<span class="fl now_price">&yen;51</span>
+					<a href="javascript:;" class="fr"></a>
+				</div>
+				
+			</li>
+			<li class="clearFix">
+				<b class="fl">1</b>
+				<a href="javascript:;" class="fl"><img src="img/nav.jpg"/></a>
+				<div class="fl clearFix sell">
+					<div class="fl">
+						<p>已售68423</p>
+						<span>2.3折</span>
+						<span class="price">&yen;<i>299</i></span>
+					</div>
+					<span class="fl now_price">&yen;51</span>
+					<a href="javascript:;" class="fr"></a>
+				</div>
+				
+			</li>
+			<li class="clearFix">
+				<b class="fl">1</b>
+				<a href="javascript:;" class="fl"><img src="img/nav.jpg"/></a>
+				<div class="fl clearFix sell">
+					<div class="fl">
+						<p>已售68423</p>
+						<span>2.3折</span>
+						<span class="price">&yen;<i>299</i></span>
+					</div>
+					<span class="fl now_price">&yen;51</span>
+					<a href="javascript:;" class="fr"></a>
+				</div>
+				
+			</li>
+			<li class="clearFix">
+				<b class="fl">1</b>
+				<a href="javascript:;" class="fl"><img src="img/nav.jpg"/></a>
+				<div class="fl clearFix sell">
+					<div class="fl">
+						<p>已售68423</p>
+						<span>2.3折</span>
+						<span class="price">&yen;<i>299</i></span>
+					</div>
+					<span class="fl now_price">&yen;51</span>
+					<a href="javascript:;" class="fr"></a>
+				</div>
+				
+			</li>
+			<li class="clearFix">
+				<b class="fl">1</b>
+				<a href="javascript:;" class="fl"><img src="img/nav.jpg"/></a>
+				<div class="fl clearFix sell">
+					<div class="fl">
+						<p>已售68423</p>
+						<span>2.3折</span>
+						<span class="price">&yen;<i>299</i></span>
+					</div>
+					<span class="fl now_price">&yen;51</span>
+					<a href="javascript:;" class="fr"></a>
+				</div>
+				
+			</li>
+		</ul>
+	</section>
+	<section class="hot product">
+		<div class="product_header">更多划算 逛起来</div>
+		<div class="product_con clearFix">
+			<div class="product_con_l fl"></div>
+			<ul class="product_con_r fl clearFix">
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+			
+			</ul>
+		</div>
+	
+	</section>
+	<section class="hot product">
+		<div class="product_header">更多划算 逛起来</div>
+		<div class="product_con clearFix">
+			<div class="product_con_l fl"></div>
+			<ul class="product_con_r fl clearFix">
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+			
+			</ul>
+		</div>
+	
+	</section>
+	<section class="hot product">
+		<div class="product_header">更多划算 逛起来</div>
+		<div class="product_con clearFix">
+			<div class="product_con_l fl"></div>
+			<ul class="product_con_r fl clearFix">
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+				<li>服饰</li>
+			
+			</ul>
+		</div>
+	
+	</section>
+	<section class="hot product">
+		<div class="product_header">更多划算 逛起来</div>
+	</section>
+	<section class="hot service">
+		<ul class="clearFix">
+			<li>
+				<a href="javascript:;"><div></div><span>安卓客户端</span></a>
+			</li>
+			<li>
+				<a href="javascript:;"><div></div><span>安卓客户端</span></a>
+			</li>
+			<li>
+				<a href="javascript:;"><div></div><span>安卓客户端</span></a>
+			</li>
+		</ul>
+	</section>
+	<section class="load_in">
+		<a href="javascript:;" class="fl load">登陆</a>
+		<a href="javascript:;" class="fl">登陆</a>
+		<a href="javascript:;" class="fr">TOP&nbsp;></a>
+	</section>
+	<footer>
+		<div class="type">
+			<span>标准版</span>
+			<span>电脑版</span>
+		</div>
+		<div class="connect"><a href="javascrip:;">2013 浙B2-20080024&nbsp;服务中心</a></div>
+	</footer>
+</div>
+</body>
+</html>

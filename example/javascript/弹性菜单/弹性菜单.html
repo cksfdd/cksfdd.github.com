@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+        ul{
+            width:328px;
+            overflow:hidden;
+            background:#ccc;
+            position:relative;
+            margin:100px auto;
+        }
+        .li{
+            width:80px;
+            height:30px;
+            line-height:30px;
+            text-align:center;
+            float:left;
+            border:1px solid #000;
+            position:relative;
+            z-index:2;
+        }
+        #mask{
+            position:absolute;left:0;top:0;
+            background:yellow;
+            width:82px;
+            height:30px;
+            z-index:1;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var aLi=document.getElementsByTagName('li');
+            var oMask=document.getElementById('mask');
+            var iNow=0;
+            var timer=null;
+            for(var i=0;i<aLi.length-1;i++){
+                aLi[i].onmouseover=function(){
+                    var iSpeed=0;
+                    var _this=this;
+                    clearInterval(timer);
+                    timer=setInterval(function(){
+                        iSpeed+=(_this.offsetLeft-oMask.offsetLeft)/8;
+                        iSpeed=iSpeed*0.75;
+                        oMask.style.left=oMask.offsetLeft+iSpeed+'px';
+                        if(Math.abs(iSpeed)<=1&&Math.abs(_this.offsetLeft-oMask.offsetLeft)<=1){
+                            clearInterval(timer);
+                            oMask.offsetLeft=_this.offsetLeft+'px';
+                            iSpeed=0;
+                        }
+                    },30);
+                };
+                aLi[i].onmouseout=function(){
+                    var iSpeed=0;
+                    clearInterval(timer);
+                    timer=setInterval(function(){
+                        iSpeed+=(aLi[iNow].offsetLeft-oMask.offsetLeft)/8;
+                        iSpeed=iSpeed*0.75;
+                        oMask.style.left=oMask.offsetLeft+iSpeed+'px';
+                        if(Math.abs(iSpeed)<=1&&Math.abs(aLi[iNow].offsetLeft-oMask.offsetLeft)<=1){
+                            clearInterval(timer);
+                            oMask.offsetLeft=aLi[iNow].offsetLeft+'px';
+                            iSpeed=0;
+                        }
+                    },30);
+                };
+                (function(index){
+                    aLi[i].onclick=function(){
+                        iNow=index;
+                    };
+                })(i);
+            }
+        };
+    </script>
+</head>
+<body>
+<ul>
+    <li class="li">111</li>
+    <li class="li">222</li>
+    <li class="li">333</li>
+    <li class="li">444</li>
+    <li id="mask"></li>
+</ul>
+</body>
+</html>

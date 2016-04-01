@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+*{margin: 0; padding: 0; list-style: none;}
+a{color: #252525; text-decoration: none;}
+a:hover{color: #ba2636;}
+#box{width: 720px; overflow: hidden; margin: 20px auto;}
+#ul1{height: 40px; border-left: 1px solid #ccc; float: left;}
+#ul1 li{width: 130px; height: 38px; line-height: 38px; text-align: center; float: left; cursor: pointer; display: inline; border: 1px solid #ccc; border-left: none;}
+#ul1 li.active{height: 36px; line-height: 36px; border-bottom: 0; border-top: 3px solid #324f4f;}
+.to_do{width: 456px; height: 39px; border-bottom: 1px solid #ddd; text-align: right; float: right; display: block;}
+#div1{width: 720px; margin: 0; clear: both;}	
+#div1 .main{overflow: hidden;}
+#div1 .main ol{padding-bottom: 30px; overflow: hidden;}
+#div1 .main ol li{width: 355px; float: left; line-height: 43px; border-bottom: 1px solid #ddd; font-size: 14px;}
+#div1 .main ol li.pr10{padding-right: 10px;}
+#div1 .main ol li a{font-weight: bold; margin-left: 20px;}
+.page{padding: 10px 0; height: 40px; overflow: hidden; width: 720px; overflow: hidden;}
+.page a{float: left; width: 36px; height: 39px; margin-right: 5px; text-align: center; line-height: 39px; font-weight: bold; font-size: 12px; background: #aabbb5; color: #fff;}
+.page a.on{background: #324f4f;}
+#content_text{width: 698px; height: 129px; border: 1px solid #Ddd; border-top: 0; padding: 10px; line-height: 22px; background: #f4f3f3;}
+.content{padding-top: 0; display: none;}
+.show{display: block;}
+.text_sub{width: 720px; padding-top: 40px; line-height: 32px; text-align: right; position: relative;}
+.text_sub a{width: 93px; height: 32px; display: inline-block; background: #324f4f; color: #fff; text-align: center; margin-left: 10px;}
+.comments li{line-height: 20px; border-bottom: 1px solid #d8dfea; overflow: hidden; padding-top: 10px;}
+.comments li img{width: 40px; height: 40px; float: left; margin-right: 10px;}
+.comments li p.cont{ float: left;}
+.comments li p span{margin-right: 10px;}
+.reply{padding-top: 5px; text-align: right;}
+.reply span{font-size: 14px; margin-right: 6px;}
+.reply span a{color: #9e3a3a;}
+</style>
+<script type="text/javascript" src="ajax_finish.js"></script>
+<script type="text/javascript">
+function addCookie(name, value, iDay){
+	var oDate = new Date();
+	oDate.setDate(oDate.getDate()+iDay);
+	document.cookie = name +'='+ value +'; path=/; expires=' + oDate;
+}
+
+function getCookie(name){
+	var arr = document.cookie.split('; ');
+
+	for(var i = 0; i < arr.length; i++){
+		var arr2 = arr[i].split('=');
+
+		if(arr2[0] == name){
+			return arr2[1];
+		}
+	}
+
+	return '';
+}
+
+window.onload = function (){
+	var oUl = document.getElementById('ul1'),
+		aLi = oUl.children,
+		oDiv = document.getElementById('div1'),
+		aDiv = oDiv.children,
+		oPage_read = document.getElementById('page_read'),
+		oRead_list = document.getElementById('read_list'),
+		oPage_view = document.getElementById('page_view'),
+		oComment = document.getElementById('comments'),
+		oSend_msg = document.getElementById('send_msg'),
+		oText = document.getElementById('content_text');
+
+	var URL = 'qq_list.php';
+
+	//选项卡
+	for(var i = 0; i < aLi.length; i++){
+		(function (index){
+			aLi[i].onclick = function (){
+				for(var i = 0; i < aLi.length; i++){
+					aLi[i].className = '';
+					aDiv[i].className = 'content';
+				}
+				this.className = 'active';
+				aDiv[index].className = 'content show';
+				var oList = getCookie('list_page');
+
+				if(oList){
+					window.location.hash = '#page=' + (index+1) + '&list='+oList;
+				}else{
+					window.location.hash = '#page=' + (index+1) + '&list=';
+				}
+			};
+		})(i);
+	}
+
+	//获取页数
+	getPage();
+	function getPage(){
+		ajax({
+			url: URL,
+			data: {
+				act: 'getPageCount'
+			},
+			success: function (str){
+				var json = eval('('+str+')');
+
+				if(json.error){
+					alert('获取页码失败！');
+				}else{
+					for(var i = 0; i < json.msg; i++){
+						var oA = document.createElement('a');
+						oA.href = 'javascript:;';
+						oA.innerHTML = i + 1;
+						if(i == 0){
+							oA.className = 'on';
+						}
+
+						oPage_read.appendChild(oA);
+
+						oA.onclick = function (){
+							for(var i = 0; i < oPage_read.children.length; i++){
+								oPage_read.children[i].className = '';
+							}
+							this.className = 'on';
+
+							var iNow = parseInt(this.innerHTML);
+
+							window.location.hash = '#page=1&list=' + iNow;
+
+							get_page(iNow-1);
+
+							addCookie('list_page', parseInt(this.innerHTML), 1);
+						};
+					}
+				}
+			}
+		});
+	}
+
+	if(window.location.hash){
+		for(var i = 0; i < aLi.length; i++){
+			aLi[i].className = '';
+			aDiv[i].className = 'content';
+		}
+		aLi[window.location.hash.substring(6,7)-1].className = 'active';
+		aDiv[window.location.hash.substring(6,7)-1].className = 'content show';
+	}else{
+		aLi[0].className = 'active';
+		aDiv[0].className = 'content show';
+	}
+	
+	//获取某一页数据
+	get_page(0);
+	function get_page (iPage){
+		oRead_list.innerHTML = '';
+		ajax({
+			url: URL,
+			data: {
+				act: 'get',
+				n: iPage
+			},
+			success: function (str){
+				var json = eval('('+str+')');
+
+				if(parseInt(json.error)){
+					alert('数据出错！');
+				}else{
+					for(var i = 0; i < json.msg.length; i++){
+						var oLi = document.createElement('li');
+						oLi.innerHTML = '<a href="javascript:;">'+parseInt(i+1+10*iPage)+'. '+json.msg[i].title+'</a>';
+
+						if(i%2){
+							oLi.className = 'pr10';
+						}
+
+						oRead_list.appendChild(oLi);
+					}
+				}
+			}
+		});
+	}
+
+	//获取评论的总页数
+	getReview();
+	function getReview(){
+		oPage_view.innerHTML = '';
+		ajax({
+			url: URL,
+			data: {
+				act: 'getSendPageCount'
+			},
+			success: function (str){
+				var json = eval('('+str+')');
+
+				if(json.error){
+					alert('获取页数出错！');
+				}else{
+					for(var i = 0; i < json.count; i++){
+						var oA = document.createElement('a');
+						oA.href = 'javascript:;';
+						oA.innerHTML = i+1;
+						if(i == 0){
+							oA.className = 'on';
+						}
+
+						oPage_view.appendChild(oA);
+
+						oA.onclick = function (){
+							for(var i = 0; i < oPage_view.children.length; i++){
+								oPage_view.children[i].className = '';
+							}
+							this.className = 'on';
+
+							getOneMsg(parseInt(this.innerHTML)-1);
+						};
+					}
+				}
+			}
+		});
+	}
+
+	//点击发表评论
+	oSend_msg.onclick = function (){
+		ajax({
+			url: URL,
+			data: {
+				act: 'sendMsg',
+				nickName: 'xxxx',
+				pic: 1,
+				content: encodeURIComponent(oText.value)
+			},
+			success: function(str){
+				var json = eval('('+str+')');
+
+				if(json.error){
+					alert('发表评论失败！');
+				}else{
+					var oLi = createLi(json.time,'xxxx',1,oText.value);
+
+					if(oComment.children.length){
+						oComment.insertBefore(oLi, oComment.children[0]);
+					}else{
+						oComment.appendChild(oLi);
+					}
+				}
+
+				oText.value = '';
+			}
+		});
+
+		getReview();
+
+		if(oComment.children.length > 2){
+			oComment.removeChild(oComment.children[2]);
+		}
+	};
+
+	//创建li
+	function createLi(time,nickName,pic,content){
+		var oDate = new Date();
+		oDate.setTime(time*1000);
+		var now_time = oDate.getFullYear()+'-'+(oDate.getMonth()+1)+'-'+oDate.getDate()+' '+oDate.getHours()+':'+oDate.getMinutes();
+
+		var oLi = document.createElement('li');
+		oLi.innerHTML = '<img class="pic" src="img/'+pic+'.jpg">'
+						+'<p class="title"><span>'+nickName+'</span><span>'+now_time+'</span></p>'
+						+'<p class="cont">'+content+'</p>'
+						+'<div class="reply">'
+						+'<span>赞<a href="javascript:;">(0)</a></span>'
+						+'</div>';
+
+		return oLi;
+	}
+
+	//获取某一页评论
+	getOneMsg(0);
+	function getOneMsg(iPage){
+		oComment.innerHTML = '';
+		ajax({
+			url: URL,
+			data: {
+				act: 'getSendPage',
+				n: iPage
+			},
+			success: function (str){
+				var json = eval('('+str+')');
+
+				if(parseInt(json.error)){
+					alert('获取评论失败');
+				}else{
+					if(json.msg == '暂无数据'){
+						alert('暂无数据');
+					}else{
+						for(var i = 0; i < json.msg.length; i++){
+							var oLi = createLi(json.msg[i].time, json.msg[i].nickName,json.msg[i].pic, json.msg[i].content);
+
+							oComment.appendChild(oLi);
+						}
+					}
+				}
+			}
+		});
+	}
+
+};	
+</script>
+</head>
+<body>
+<div id="box">
+	<ul id="ul1">
+		<li class="active">章节目录</li>
+		<li>评论</li>
+	</ul>
+	<span class="to_do"></span>
+	<div id="div1">
+		<div class="content show">
+			<div class="main">
+				<ol id="read_list">
+					<!-- <li><a href="javascript:;">1. 第1章 楔子，冥婚</a></li>
+					<li class="pr10"><a href="javascript:;">2. 第2章 穿越遭乞丐羞辱</a></li>
+					<li><a href="javascript:;">3. 第3章 乞丐儿们</a></li>
+					<li class="pr10"><a href="javascript:;">4. 第4章 这不知廉耻的女人！</a></li>
+					<li><a href="javascript:;">5. 第5章 接踵而来的浪潮</a></li>
+					<li class="pr10"><a href="javascript:;">6. 第6章 大惊失色</a></li> -->
+				</ol>
+				<div class="page" id="page_read">
+					<!-- <a href="javascript:;" class="on">1</a>
+					<a href="javascript:;">2</a>
+					<a href="javascript:;">3</a> -->
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="main">
+				<textarea id="content_text"></textarea>
+				<div class="text_sub">
+					<a href="javascript:;" id="send_msg">发表评论</a>
+				</div>
+				<ul class="comments" id="comments">
+					<!-- <li>
+						<img class="pic" src="img/1.jpg">
+						<p class="title"><span>小七 </span><span>2014-05-21 08:49</span></p>
+						<p class="cont">快更新啊</p>
+						<div class="reply">
+							<span>赞<a href="javascript:;">(0)</a></span>
+						</div>
+					</li> -->
+				</ul>
+				<div class="page" id="page_view">
+					<!-- <a href="javascript:;" class="on">1</a>
+					<a href="javascript:;">2</a>
+					<a href="javascript:;">3</a> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

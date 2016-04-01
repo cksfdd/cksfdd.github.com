@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background:#000;
+            overflow:hidden;
+        }
+        div {
+            width: 130px;
+            height: 130px;
+            position: absolute;
+            bottom: 0;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size:30px;
+            color:#fff;
+            line-height:130px;
+            text-align:center;
+            font-weight:bold;
+        }
+    </style>
+    <script>
+        function addEvent(obj, fn, sEv) {
+            if (obj.addEventListener) {
+                obj.addEventListener(sEv, fn, false);
+            } else {
+                obj.attachEvent('on' + sEv, fn);
+            }
+        }
+        function removeEvent(obj, fn, sEv) {
+            if (obj.removeEventListener) {
+                obj.removeEventListener(sEv, fn, false);
+            } else {
+                obj.detachEvent('on' + sEv, fn);
+            }
+        }
+        function rnd(n, m) {
+            return parseInt(n + Math.random() * (m - n));
+        }
+        window.onload = function () {
+            var aBox = document.getElementsByTagName('div');
+            for (var i = 0; i < aBox.length; i++) {
+                aBox[i].iSpeedX = 0;
+                aBox[i].iSpeedY = 0;
+                aBox[i].lastX = 0;
+                aBox[i].lastY = 0;
+                aBox[i].style.background = 'rgb(' + rnd(0, 256) + ',' + rnd(0, 256) + ',' + rnd(0, 256) + ')';
+                aBox[i].style.left = rnd(55, 776) + 'px';
+                aBox[i].style.top = rnd(0, 136) + 'px';
+                (function (index) {
+                    elastic(aBox[index]);
+                })(i);
+                drag(aBox[i]);
+            }
+            function drag(obj) {
+                obj.onmousedown = function (ev) {
+                    var _this = this;
+                    clearInterval(_this.timer);
+                    var oEvent = ev || event;
+                    var disX = oEvent.clientX - _this.offsetLeft;
+                    var disY = oEvent.clientY - _this.offsetTop;
+                    addEvent(document, fnMove, 'mousemove');
+                    addEvent(document, fnUp, 'mouseup');
+                    function fnUp() {
+                        elastic(_this);
+                        removeEvent(document, fnMove, 'mousemove');
+                        removeEvent(document, fnUp, 'mouseup');
+                        _this.releaseCapture && _this.releaseCapture();
+                    }
+
+                    function fnMove(ev) {
+                        var oEvent = ev || event;
+                        _this.style.left = oEvent.clientX - disX + 'px';
+                        _this.style.top = oEvent.clientY - disY + 'px';
+                        _this.iSpeedX = oEvent.clientX - _this.lastX;
+                        _this.iSpeedY = oEvent.clientY - _this.lastY;
+                        _this.lastX = oEvent.clientX;
+                        _this.lastY = oEvent.clientY;
+                    }
+
+                    _this.setCapture && _this.setCapture();
+                    return false;
+                };
+            }
+
+            function elastic(obj) {
+                clearInterval(obj.timer);
+                obj.timer = setInterval(function () {
+                    obj.iSpeedY += 6;
+                    var t = obj.offsetTop + obj.iSpeedY;
+                    var l = obj.offsetLeft + obj.iSpeedX;
+                    if (l < 0) {
+                        l = 0;
+                        obj.iSpeedX *= -0.8;
+                        obj.iSpeedY *= 0.8;
+                    }
+                    if (t < 0) {
+                        t = 0;
+                        obj.iSpeedX *= 0.8;
+                        obj.iSpeedY *= -0.8;
+                    }
+                    if (l > document.documentElement.clientWidth - obj.offsetWidth) {
+                        l = document.documentElement.clientWidth - obj.offsetWidth;
+                        obj.iSpeedX *= -0.8;
+                        obj.iSpeedY *= 0.8;
+                    }
+                    if (t > document.documentElement.clientHeight - obj.offsetHeight) {
+                        t = document.documentElement.clientHeight - obj.offsetHeight;
+                        obj.iSpeedX *= 0.8;
+                        obj.iSpeedY *= -0.8;
+                    }
+                    obj.style.left = l + 'px';
+                    obj.style.top = t + 'px';
+                    if (Math.abs(obj.iSpeedX) < 1) {
+                        obj.iSpeedX = 0;
+                    }
+                    if (Math.abs(obj.iSpeedY) < 1) {
+                        obj.iSpeedY = 0;
+                    }
+                    if (obj.iSpeedX == 0 && obj.iSpeedY == 0 && t == document.documentElement.clientHeight - obj.offsetHeight) {
+                        clearInterval(obj.timer);
+                    }
+
+                }, 30);
+            }
+
+        };
+    </script>
+</head>
+<body>
+<div>动</div>
+<div>动</div>
+<div>我</div>
+<div>试</div>
+<div>试</div>
+</body>
+</html>

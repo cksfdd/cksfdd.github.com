@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无缝滚动选项卡</title>
+<style>
+*{margin:0; padding:0; list-style:none; text-decoration:none;}
+#box{width:800px;height:453px; position:relative; margin:100px auto; overflow:hidden;}
+#box ul{position:absolute; left:0; top:0;}
+#box ul li{width:800px;height:453px; float:left;}
+#box ul li img{width:100%;}
+#box ol{position:absolute; left:50%; bottom:20px; width:250px; margin-left:-125px;}
+#box ol li{width:30px; height:30px; background:#fff; float:left; margin:10px; border-radius:50%;}
+#box ol li.on{background:#f90;}
+#box a{position:absolute; width:60px; height:60px; text-align:center; line-height:60px; top:50%; margin-top:-30px; background:rgba(0,0,0,0.5); font-size:30px; color:#fff; display:none;}
+#box a:hover{background:rgba(255,0,0,0.4);}
+#box a.prev{left:0;}
+#box a.next{right:0;}
+</style>
+<script>
+function marqueeTab(id){
+	var oBox = document.getElementById(id);
+	var oUl = oBox.children[0];
+	var oOl = oBox.children[1];
+	var oPrev = oBox.children[2];
+	var oNext = oBox.children[3];
+	oUl.innerHTML+=oUl.innerHTML;		//复制一份
+	var aLi = oUl.children;
+	var aBtn = oOl.children;
+	oUl.style.width = aLi.length*aLi[0].offsetWidth+'px';		//设置宽度
+	var W = oUl.offsetWidth/2;
+	var iNow = 0;
+	oBox.onmouseover=function(){
+		oPrev.style.display='block';
+		oNext.style.display='block';
+		clearInterval(oBox.timer);						//鼠标移入的时候清除定时器，停止播放
+	};
+	oBox.onmouseout=function(){
+		oPrev.style.display='none';
+		oNext.style.display='none';
+		oBox.timer = setInterval(function(){			 //鼠标移出的时候开启定时器，自动播放
+			next();
+		},1000);
+	};
+	for(var i=0;i<aBtn.length;i++){
+		(function(index){
+			aBtn[i].onclick=function(){
+
+				if((iNow%aBtn.length==4||iNow%aBtn.length==-1)&&index==0){
+					iNow++;
+					}
+				if(iNow%aBtn.length==0&&index==4){
+					iNow--;
+				}
+				iNow = parseInt(iNow/aBtn.length)*aBtn.length+index;		//当点击aBtn的时候把index转换成iNow
+				tab();
+			};
+		})(i);
+	}
+	oPrev.onclick=function(){
+		iNow--;
+		tab();
+	};
+	oNext.onclick = next;
+
+	oBox.timer = setInterval(function(){
+		next();
+	},1000);
+
+	function next(){
+		iNow++;
+		tab();
+	}
+	function tab(){
+		for(var i=0;i<aBtn.length;i++){
+			aBtn[i].className='';
+		}
+		if(iNow>0){
+			aBtn[iNow%aBtn.length].className='on';				//通过iNow的值设置aBtn的样式（把iNow转换成index）
+		}else{
+			aBtn[(iNow%aBtn.length+aBtn.length)%aBtn.length].className='on';			//通过iNow的值设置aBtn的样式（把iNow转换成index）
+		}
+		move(oUl,-iNow*aLi[0].offsetWidth);				//添加运动
+	}
+	var left = 0;
+	function move(obj,iTarget){
+		var start = left;
+		var dis = iTarget - start;
+		var count = Math.floor(700/30);
+		var n = 0;
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			n++;
+			var a = 1-n/count;
+			left = start+dis*(1-Math.pow(a,3));
+			if(left<0){
+				obj.style.left = left%W+'px';
+			}else{
+				obj.style.left = (left%W-W)%W+'px';
+			}
+			if(n==count){
+				clearInterval(obj.timer);
+			}
+		},30);
+	}
+}
+
+window.onload=function(){
+	marqueeTab('box');
+};
+</script>
+</head>
+<body>
+<div id="box">
+	<ul>
+		<li><img src="img/0.jpg" /></li>
+		<li><img src="img/1.jpg" /></li>
+		<li><img src="img/2.jpg" /></li>
+		<li><img src="img/3.jpg" /></li>
+		<li><img src="img/4.jpg" /></li>
+	</ul>
+	<ol>
+		<li class="on"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ol>
+	<a href="javascript:;" class="prev"><</a>
+	<a href="javascript:;" class="next">></a>
+</div>
+</body>
+</html>

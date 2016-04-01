@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            border:1px solid red;
+            overflow:hidden;
+            width:966px;
+            margin:0 auto;
+            background:blue;
+        }
+        #box ul li{
+            width:300px;
+            margin:10px 0;
+            list-style:none;
+        }
+        #box ul{
+            width:300px;
+            border:1px solid green;
+            margin:0 10px;
+            float:left;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox=document.getElementById('box');
+            var aUl=oBox.getElementsByTagName('ul');
+            function rnd(m,n){
+                return parseInt(Math.random()*(n-m)+m);
+            }
+            function cLi(){
+                var oLi=document.createElement('li');//创建一个元素
+                oLi.style.height=rnd(200,400)+'px';//给这个元素一个随机的高度
+                oLi.style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';//给这元素一个随机的颜色
+                return oLi;
+            }
+            function createElement(){
+                for(var i=0;i<20;i++){//循环次数决定一次创建和添加元素的个数
+                    var oLi=cLi();
+                    var arr=[];
+                    for(var j=0;j<aUl.length;j++){//把一组元素转换成一个数组
+                        arr.push(aUl[j]);
+                    }
+                    arr.sort(function(n1,n2){//根据元素的占位高排序
+                        return n1.offsetHeight-n2.offsetHeight;
+                    });
+                    arr[0].appendChild(oLi);//往高度最小的元素中添加元素
+                }
+            }
+            createElement();
+            var bOk=true;
+            window.onscroll=function(){
+                var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+                if(bOk==true&&scrollTop==document.body.offsetHeight-document.documentElement.clientHeight){
+                      createElement();
+                }
+                var aLi=oBox.getElementsByTagName('li');
+                if(aLi.length>=100){
+                    bOk=false;
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+</body>
+</html>
