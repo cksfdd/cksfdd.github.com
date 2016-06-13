@@ -97,7 +97,7 @@ addReady(function () {
                     oNav_div.style.visibility = 'visible';
                 } else {
                     oNav.style.position = 'relative';
-                    oNav.style.position = '0';
+                    oNav.style.left = (oBodyWidth - oNav.offsetWidth) / 2 + 'px';
                     oNav_mask.style.display = 'none';
                     //oNav_div.style.display='none';
                     oNav_div.style.visibility = 'hidden';
