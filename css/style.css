@@ -137,6 +137,7 @@ banner
 .banner {
     width: 1349px;
     min-width: 1349px;
+    margin:0 auto;
     height: 444px;
     background:url("../images/banner.png") no-repeat;
     position:relative;left:0;top:0;

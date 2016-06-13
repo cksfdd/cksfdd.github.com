@@ -67,6 +67,7 @@ addReady(function () {
         ** 导航吸顶条
         */
         var bOk=false;
+        var oBodyWidth = document.documentElement.clientWidth;
         window.onscroll = function () {
             if(bOk){
                 clearInterval(timer);
@@ -77,6 +78,7 @@ addReady(function () {
                 if (oT <= scrollTop) {
                     oNav.style.position = 'absolute';
                     oNav.style.top = scrollTop + 'px';
+                    oNav.style.left = (oBodyWidth - oNav.offsetWidth) / 2 + 'px';
                     oNav_mask.style.display = 'block';
                     oNav_div.style.visibility = 'visible';
                 } else {
@@ -89,6 +91,7 @@ addReady(function () {
                 if (oT <= scrollTop) {
                     oNav.style.position = 'fixed';
                     oNav.style.top = '0';
+                    oNav.style.left = (oBodyWidth - oNav.offsetWidth) / 2 + 'px';
                     oNav_mask.style.display = 'block';
                     //oNav_div.style.display='block';
                     oNav_div.style.visibility = 'visible';
